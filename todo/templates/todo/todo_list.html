@@ -7,5 +7,17 @@
 </head>
 <body>
     <h1>Properties</h1>
+    <table>
+        {% for property in properties %}
+            <tr>
+                <td>{{ property.property_number }}</td>
+                <td>{{ property.Price }}</td>
+                <td>{{ property.Status }}</td>
+            </tr>
+        {% empty %}
+        <tr><td>You haven't added any properties yet</td></tr>
+        {% endfor %}
+    </table>
+    
 </body>
 </html>
