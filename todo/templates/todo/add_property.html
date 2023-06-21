@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Add a property</h1>
+    <form method="POST" action="add">
+        {% csrf_token %}
+        <div>
+            <p>
+                <label for="id_number">Property Number: </label>
+                <input type="text" id="id_number" name="property_number"/>
+            </p>
+        </div>
+        <div>
+            <p>
+                <label for="id_status">Status: </label>
+                <input type="text" id="id_status" name="Status" list="Status"/>
+                <datalist id="Status">
+                    <option value="Available">
+                    <option value="Quoted">
+                    <option value="Reserved">
+                    <option value="Rejected">
+                    <option value="Sold">
+                </datalist>
+
+            </p>
+        </div>
+        <div>
+            <p>
+                <label for="id_price">Price: </label>
+                <input type="number" id="id_price" name="Price"/>
+            </p>
+        </div>
+        <div>
+            <button type="submit">Add property</button>
+        </div>
+    </form>
+    
+    
+</body>
+</html>
