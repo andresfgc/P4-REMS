@@ -19,6 +19,7 @@ class Property(models.Model):
     #Sold = models.BooleanField(null=False, blank=False, default=False)
     Price = models.IntegerField(null=False, blank=False)
     last_modified = models.DateField(auto_now=True)
+    project_id=models.ForeignKey(Project, on_delete=models.CASCADE)
     
     def __str__(self):
         return self.property_number

@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
     <link rel="stylesheet" href="/static/css/style.css" type="text/css">
-    <title>Todo</title>
+    <title>Edit</title>
 </head>
 <body>
 
@@ -29,32 +29,18 @@
             <li><a href="">Projects</a></li>
           </ul>
     </header>
-    
+
     <main class="container">
-        <h1>Properties</h1>
-        <table>
-            {% for property in properties %}
-                <tr>
-                    <td>{{ property.property_number }}</td>
-                    <td>{{ property.Price }}</td>
-                    <td>{{ property.Status }}</td>
-                    <td>
-                        <a href="/edit/{{ property.id }}">
-                            <button>Edit</button>
-                        </a>
-                    </td>
-                    <td>
-                        <a href="/delete/{{ property.id }}">
-                            <button>Delete</button>
-                        </a>
-                    </td>
-                </tr>
-            {% empty %}
-            <tr><td>You haven't added any properties yet</td></tr>
-            {% endfor %}
-        </table>
-        <br>
-        <a class="waves-effect waves-light btn" href="/add">Add a propertty</a>
+        <h1>Edit Project</h1>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div>
+                <p>
+                    <button type="submit" class="waves-effect waves-light btn">Update Project</button>
+                </p>
+            </div>
+        </form>
     </main>
 
     <footer class="page-footer light-green">
