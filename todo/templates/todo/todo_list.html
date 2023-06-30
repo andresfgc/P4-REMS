@@ -3,31 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/style.css" type="text/css">
+    <title>Todo</title>
 </head>
 <body>
-    <h1>Properties</h1>
-    <table>
-        {% for property in properties %}
-            <tr>
-                <td>{{ property.property_number }}</td>
-                <td>{{ property.Price }}</td>
-                <td>{{ property.Status }}</td>
-                <td>
-                    <a href="/edit/{{ property.id }}">
-                        <button>Edit</button>
-                    </a>
-                </td>
-                <td>
-                    <a href="/delete/{{ property.id }}">
-                        <button>Delete</button>
-                    </a>
-                </td>
-            </tr>
-        {% empty %}
-        <tr><td>You haven't added any properties yet</td></tr>
-        {% endfor %}
-    </table>
-    <a href="/add">Add a property</a>
+
+    <header>
+        <!--top navbar-->
+        <nav class="light-green darken-1">
+            <div class="nav-wrapper">
+              <a href="#" class="brand-logo">REMS</a>
+              <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
+              <ul class="right hide-on-med-and-down">
+                <li><a href="/add">Add Property</a></li>
+                <!-- <li><a href="home">Properties</a></li> -->
+                <li><a href="#">Projects</a></li>
+              </ul>
+            </div>
+          </nav>
+        
+          <!--mobile sidenav-->
+          <ul class="sidenav" id="mobile-demo">
+            <li><a href="/add">Add Property</a></li>
+            <!-- <li><a href="todo_list.html">Properties</a></li> -->
+            <li><a href="#">Projects</a></li>
+          </ul>
+    </header>
+    
+
+    <main class="container">
+        <h1>Properties</h1>
+        <table>
+            {% for property in properties %}
+                <tr>
+                    <td>{{ property.property_number }}</td>
+                    <td>{{ property.Price }}</td>
+                    <td>{{ property.Status }}</td>
+                    <td>
+                        <a href="/edit/{{ property.id }}">
+                            <button>Edit</button>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="/delete/{{ property.id }}">
+                            <button>Delete</button>
+                        </a>
+                    </td>
+                </tr>
+            {% empty %}
+            <tr><td>You haven't added any properties yet</td></tr>
+            {% endfor %}
+        </table>
+        <!-- <a href="/add">Add a property</a> -->
+    </main>
+
+    <footer class="page-footer light-green">
+        <div class="footer-copyright light-green">
+          <div class="container">
+          For educational purposes only
+          <a class="white-text right" href="https://codeinstitute.net" target="_blank">&copy; Code Institute</a>
+          </div>
+        </div>
+      </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="/static/js/script.js"></script>
 </body>
 </html>
