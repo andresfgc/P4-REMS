@@ -8,6 +8,6 @@ body {
     flex: 1 0 auto;
   }
 
-  select {
-    display: inline-block;
-  }
+#id_Status {
+  display: block;
+}
