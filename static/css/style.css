@@ -9,5 +9,5 @@ body {
   }
 
   select {
-    display: inherit;
+    display: inline-block;
   }
