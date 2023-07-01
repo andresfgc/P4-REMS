@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
     <link rel="stylesheet" href="/static/css/style.css" type="text/css">
-    <title>Add</title>
+    <title>Edit</title>
 </head>
 <body>
 
@@ -14,7 +14,7 @@
         <!--top navbar-->
         <nav class="light-green darken-1">
             <div class="nav-wrapper">
-              <a href="properties" class="brand-logo">REMS</a>
+              <a href="" class="brand-logo">REMS</a>
               <a href="" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
               <ul class="right hide-on-med-and-down">
                 <li><a href="properties">Properties</a></li>
@@ -31,13 +31,13 @@
     </header>
 
     <main class="container">
-        <h1>New Project</h1>
-        <form method="POST" action="add">
+        <h1>Edit Project</h1>
+        <form method="POST">
             {% csrf_token %}
             {{ form.as_p }}
             <div>
                 <p>
-                    <button type="submit" class="waves-effect waves-light btn">Add Project</button>
+                    <button type="submit" class="waves-effect waves-light btn">Update Project</button>
                 </p>
             </div>
         </form>

@@ -37,23 +37,23 @@
                 <tr>
                     <td>{{ project.project_name }}</td>
                     <td>{{ project.Adress }}</td>
-                    <!-- <td>
-                        <a href="/edit/{{ property.id }}">
+                    <td>
+                        <a href="/edit_project/{{ project.id }}">
                             <button>Edit</button>
                         </a>
                     </td>
                     <td>
-                        <a href="/delete/{{ property.id }}">
+                        <a href="/delete_project/{{ project.id }}">
                             <button>Delete</button>
                         </a>
-                    </td> -->
+                    </td>
                 </tr>
             {% empty %}
             <tr><td>You haven't added any projects yet</td></tr>
             {% endfor %}
         </table>
         <br>
-        <a class="waves-effect waves-light btn" href="/add">Add a Project</a>
+        <a class="waves-effect waves-light btn" href="/add_project">Add a Project</a>
     </main>
 
     <footer class="page-footer light-green">
