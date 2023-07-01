@@ -5,7 +5,7 @@ from .models import Property, Project
 class PropertyForm(forms.ModelForm):
     class Meta:
         model = Property
-        fields = ['property_number', 'Price', 'Status', 'project_id']
+        fields = ['property_number', 'Price', 'Status', 'project']
 
 
 class ProjectForm(forms.ModelForm):
