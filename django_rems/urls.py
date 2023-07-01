@@ -19,8 +19,9 @@ from todo import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.get_todo_list, name='get_todo_list'),
+    path('properties', views.get_todo_list, name='get_todo_list'),
     path('add', views.add_property, name='add'),
     path('edit/<property_id>', views.edit_property, name='edit'),
     path('delete/<property_id>', views.delete_property, name='delete'),
+    path('projects', views.get_projects, name='get_projects'),
 ]

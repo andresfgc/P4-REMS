@@ -39,15 +39,15 @@ def edit_property(request, property_id):
     return render(request, 'todo/edit_property.html', context)
 
 
-def toggle_property(request, property_id):
-    property = get_object_or_404(Property, id=property_id)
-    property.Price = not property.Price
-    property.Status = not property.Status
-    property.save()
-    return redirect('get_todo_list')
-
-
 def delete_property(request, property_id):
     property = get_object_or_404(Property, id=property_id)
     property.delete()
     return redirect('get_todo_list')
+
+
+def get_projects(request):
+    projects = Project.objects.all()
+    context = {
+        'projects': projects
+    }
+    return render(request, 'todo/projects.html', context)
