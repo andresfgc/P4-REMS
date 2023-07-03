@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from todo import views
 
 urlpatterns = [
@@ -28,4 +28,6 @@ urlpatterns = [
     path('add_project', views.add_project, name='add_project'),
     path('edit_project/<project_id>', views.edit_project, name='edit_project'),
     path('delete_project/<project_id>', views.delete_project, name='delete_project'),
+    path('summernote', include('django_summernote.urls')),
+    
 ]

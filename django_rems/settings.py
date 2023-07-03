@@ -32,7 +32,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['rems-ag-58c10e6f7952.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['8000-andresfgc-rems-u2kxlv8rhnk.ws-eu101.gitpod.io', 'localhost']
 
 
 # Application definition
@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
+    'django_summernote',
     'todo',
 ]
 
