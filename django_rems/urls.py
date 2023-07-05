@@ -19,7 +19,7 @@ from todo import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.get_todo_list, name='home'),
+    path('', views.PostList.as_view(), name='home'),
     path('properties', views.get_todo_list, name='get_todo_list'),
     path('add', views.add_property, name='add'),
     path('edit/<property_id>', views.edit_property, name='edit'),
@@ -29,5 +29,4 @@ urlpatterns = [
     path('edit_project/<project_id>', views.edit_project, name='edit_project'),
     path('delete_project/<project_id>', views.delete_project, name='delete_project'),
     path('summernote', include('django_summernote.urls')),
-    
 ]

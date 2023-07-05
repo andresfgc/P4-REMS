@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Project, Property
+from django.views import generic
+from .models import Project, Property, Post
 from .forms import PropertyForm, ProjectForm
 # Create your views here.
 
@@ -85,3 +86,11 @@ def delete_project(request, project_id):
     project = get_object_or_404(Project, id=project_id)
     project.delete()
     return redirect('get_projects')
+
+
+# for Posts.
+class PostList(generic.ListView):
+    model = Post
+    queryset = Post.objects.filter(status=1).order_by('-created_on')
+    template_name = 'index.html'
+    paginate_by = 6
