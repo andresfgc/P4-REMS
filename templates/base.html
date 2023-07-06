@@ -4,58 +4,81 @@
 <html class="h-100">
 
 <head>
-    <title>REMS</title>
-
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
-    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>REMS</title>
 
 </head>
 
-<body class="d-flex flex-column h-100 main-bg">
+<body>
 
-    <!-- Navigation -->
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-white">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home' %}"><span class="brand">c<span class="red-o">o</span>de<span
-                        class="thin">|star</span></span></span></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+    <header>
+        <!--top navbar-->
+        <nav class="light-green darken-1">
+            <div class="nav-wrapper">
+                <a href="{% url 'home' %}" class="brand-logo">REMS</a>
+                <a href="" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li>
+                        <a href="{% url 'home' %}">Home</a>
                     </li>
                     {% if user.is_authenticated %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Logout</a>
+                    <li>
+                        <a href="#">Logout</a>
                     </li>
                     {% else %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Register</a>
+                    <li>
+                        <a href="#">Register</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Login</a>
+                    <li>
+                        <a href="#">Login</a>
                     </li>
                     {% endif %}
+                    <li>
+                        <a href="{% url 'home' %}">Posts</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'properties' %}">Properties</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'projects' %}">Projects</a>
+                    </li>
                 </ul>
-                <span class="navbar-text text-muted">
-                    adventures of a software developer
-                </span>
+
+                <!-- mobile seidenav -->
+                <ul class="sidenav" id="mobile-demo">
+                    <li>
+                        <a href="{% url 'home' %}">Home</a>
+                    </li>
+                    {% if user.is_authenticated %}
+                    <li>
+                        <a href="#">Logout</a>
+                    </li>
+                    {% else %}
+                    <li>
+                        <a href="#">Register</a>
+                    </li>
+                    <li>
+                        <a href="#">Login</a>
+                    </li>
+                    {% endif %}
+                    <li>
+                        <a href="#">Posts</a>
+                    </li>
+                    <li>
+                        <a href="#">Properties</a>
+                    </li>
+                    <li>
+                        <a href="#">Projects</a>
+                    </li>
+                </ul>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
+
 
     <main class="flex-shrink-0 main-bg">
         {% block content %}
@@ -64,13 +87,16 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer mt-auto py-3 dark-bg">
-        <p class="m-0 text-center text-white">Made by Code Instituters</p>
-        <p class="m-0 text-center text-white">Follow us: <i class="fab fa-facebook-square ms-3"></i>
-            <i class="fab fa-twitter-square ms-3"></i>
-            <i class="fab fa-instagram-square ms-3"></i>
-            <i class="fab fa-youtube-square ms-3"></i></p>
-    </footer>
+    <footer class="page-footer light-green">
+        <div class="footer-copyright light-green">
+          <div class="container">
+          For educational purposes only
+          <a class="white-text right" href="https://codeinstitute.net" target="_blank">&copy; Code Institute</a>
+          </div>
+        </div>
+      </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="/static/js/script.js"></script>
 </body>
 
 </html>

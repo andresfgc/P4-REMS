@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <main class="container">
+        <h1>Edit Property</h1>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div>
+                <p>
+                    <button type="submit" class="waves-effect waves-light btn">Update Property</button>
+                </p>
+            </div>
+        </form>
+    </main>
+    {%endblock%}

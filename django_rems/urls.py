@@ -20,13 +20,16 @@ from todo import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.PostList.as_view(), name='home'),
-    path('properties', views.get_todo_list, name='get_todo_list'),
+    path('properties', views.get_properties, name='properties'),
     path('add', views.add_property, name='add'),
     path('edit/<property_id>', views.edit_property, name='edit'),
     path('delete/<property_id>', views.delete_property, name='delete'),
-    path('projects', views.get_projects, name='get_projects'),
+    path('projects', views.get_projects, name='projects'),
     path('add_project', views.add_project, name='add_project'),
     path('edit_project/<project_id>', views.edit_project, name='edit_project'),
     path('delete_project/<project_id>', views.delete_project, name='delete_project'),
     path('summernote', include('django_summernote.urls')),
+    path('<slug:slug>/', views.PostDetail.as_view(), name='post_detail'),
+    path("accounts/", include("allauth.urls")),
+    # path('', include('django_rems.urls'), name='django_rems_urls'),
 ]
