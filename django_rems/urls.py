@@ -30,6 +30,7 @@ urlpatterns = [
     path('delete_project/<project_id>', views.delete_project, name='delete_project'),
     path('summernote', include('django_summernote.urls')),
     path('<slug:slug>/', views.PostDetail.as_view(), name='post_detail'),
+    path('like/<slug:slug>', views.PostLike.as_view(), name='post_like'),
     path("accounts/", include("allauth.urls")),
     # path('', include('django_rems.urls'), name='django_rems_urls'),
 ]

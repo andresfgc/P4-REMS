@@ -157,3 +157,8 @@ main {
   background: transparent;
   border: none;
 }
+
+/* post_details */
+.d-inline {
+  display: inline;
+}
