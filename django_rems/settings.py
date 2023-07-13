@@ -51,9 +51,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'django_summernote',
-    # 'materialize',
     'crispy_forms',
-    'crispy_forms_materialize',
     'todo',
 ]
 
@@ -72,7 +70,7 @@ MESSAGE_TAGS = {
     messages.ERROR: 'alert-danger',
 }
 
-CRISPY_TEMPLATE_PACK = 'materialize_css_forms'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
