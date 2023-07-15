@@ -32,21 +32,18 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarText">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
-                        </li>
                         {% if user.is_authenticated %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
-                        </li>
                         <li>
-                            <span class="navbar-text text-muted"><a class="nav-link" href="{% url 'home' %}">Posts</a></span>
+                            <span class="navbar-text"><a class="nav-link active" aria-current="page" href="{% url 'posts' %}">Posts</a></span>
                         </li>
                         <li>
                             <span class="navbar-text text-muted"><a class="nav-link" href="{% url 'properties' %}">Properties</a></span>
                         </li>
                         <li>
                             <span class="navbar-text text-muted"><a class="nav-link" href="{% url 'projects' %}">Projects</a></span>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                         </li>
                         {% else %}
                         <li class="nav-item">
@@ -58,72 +55,9 @@
                         {% endif %}
 
                     </ul>
-                    <!-- <span class="navbar-text text-muted">
-                        adventures of a software developer
-                    </span> -->
                 </div>
             </div>
         </nav>
-        <!-- <nav class="light-green darken-1">
-            <div class="nav-wrapper">
-                <a href="{% url 'home' %}" class="brand-logo">REMS</a>
-                <a href="" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
-                <ul class="right hide-on-med-and-down">
-                    <li>
-                        <a href="{% url 'home' %}">Home</a>
-                    </li>
-                    {% if user.is_authenticated %}
-                    <li>
-                        <a href="{% url 'account_logout' %}">Logout</a>
-                    </li>
-                    {% else %}
-                    <li>
-                        <a href="{% url 'account_signup' %}">Register</a>
-                    </li>
-                    <li>
-                        <a href="{% url 'account_login' %}">Login</a>
-                    </li>
-                    {% endif %}
-                    <li>
-                        <a href="{% url 'home' %}">Posts</a>
-                    </li>
-                    <li>
-                        <a href="{% url 'properties' %}">Properties</a>
-                    </li>
-                    <li>
-                        <a href="{% url 'projects' %}">Projects</a>
-                    </li>
-                </ul>
-
-                mobile seidenav
-                <ul class="sidenav" id="mobile-demo">
-                    <li>
-                        <a href="{% url 'home' %}">Home</a>
-                    </li>
-                    {% if user.is_authenticated %}
-                    <li>
-                        <a href="#">Logout</a>
-                    </li>
-                    {% else %}
-                    <li>
-                        <a href="#">Register</a>
-                    </li>
-                    <li>
-                        <a href="#">Login</a>
-                    </li>
-                    {% endif %}
-                    <li>
-                        <a href="#">Posts</a>
-                    </li>
-                    <li>
-                        <a href="#">Properties</a>
-                    </li>
-                    <li>
-                        <a href="#">Projects</a>
-                    </li>
-                </ul>
-            </div>
-        </nav> -->
     </header>
 
     <div class="container">

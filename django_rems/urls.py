@@ -19,7 +19,8 @@ from todo import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.PostList.as_view(), name='home'),
+    path('', views.homepage, name='home'),
+    path('posts', views.PostList.as_view(), name='posts'),
     path('properties', views.get_properties, name='properties'),
     path('add', views.add_property, name='add'),
     path('edit/<property_id>', views.edit_property, name='edit'),
