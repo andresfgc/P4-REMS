@@ -3,6 +3,8 @@
 {% block content %}    
 <main class="container">
     <h1>Properties</h1>
+    <br>
+    <a class="waves-effect waves-light btn" href="/add">Add a property</a>
     <table>
         {% for property in properties %}
             <tr>
@@ -26,6 +28,5 @@
         {% endfor %}
     </table>
     <br>
-    <a class="waves-effect waves-light btn" href="/add">Add a propertty</a>
 </main>
 {%endblock%}

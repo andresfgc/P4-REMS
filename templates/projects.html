@@ -3,6 +3,8 @@
 {% block content %}
 <main class="container">
     <h1>Projects</h1>
+    <br>
+    
     <table>
         {% for project in projects %}
             <tr>
@@ -23,7 +25,5 @@
         <tr><td>You haven't added any projects yet</td></tr>
         {% endfor %}
     </table>
-    <br>
-    <a class="waves-effect waves-light btn" href="/add_project">Add a Project</a>
 </main>
 {%endblock%}

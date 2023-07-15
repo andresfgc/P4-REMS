@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
-from .models import Project, Property, Post
-from .forms import PropertyForm, ProjectForm, CommentForm
+from .models import Project, Property, Post, Comment
+from .forms import PropertyForm, ProjectForm, CommentForm, PostForm
 # Create your views here.
 
 
@@ -95,6 +95,39 @@ class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = 'posts.html'
     paginate_by = 6
+
+
+    def add_post(request):
+        if request.method == 'POST':
+            form = PostForm(request.POST)
+            if form.is_valid():
+                form.save()
+                return redirect('posts')
+        form = PostForm()
+        context = {
+            'form': form
+        }
+        return render(request, 'add_post.html', context)
+
+
+    def edit_post(request, slug):
+        post = get_object_or_404(Post, slug=slug)
+        if request.method == 'POST':
+            form = PostForm(request.POST, instance=post)
+            if form.is_valid():
+                form.save()
+                return redirect('posts')
+        form = PostForm(instance=post)
+        context = {
+            'form': form
+        }
+        return render(request, 'edit_post.html', context)
+
+    
+    def delete_post(request, slug):
+        post = get_object_or_404(Post, slug=slug)
+        post.delete()
+        return redirect('posts')
 
 
 class PostDetail(View):
