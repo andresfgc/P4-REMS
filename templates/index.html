@@ -7,43 +7,35 @@
 
 {% block content %}
 
-<div class="container">
+<div class="container first-bg">
     {% if user.is_authenticated %}
-    <div class="container">
+    <h1>What do you want to achieve to day?</h1>
+    <div class="container-fluid second-bg">
         <div class="row">
-            <div class="col-md-8 mt-3 offset-md-2">
-                <h3>What do you want to achieve to day?</h3>
-            </div>
-            <div class="col-md-8 mt-3 offset-md-2">
-                <h4><a class="link" href="{% url 'projects' %}">Projects</a></h4>
-                <p>To manage your construction projects, then go to <a class="link" href="{% url 'projects' %}">projects</a></p>
-            </div>
-            <div class="col-md-8 mt-3 offset-md-2">
-                <h4><a class="link" href="{% url 'properties' %}">Properties</a></h4>
-                <p>To manage your properties, then fo to <a class="link" href="{% url 'properties' %}">properties</a></p>
-            </div>
-            <div class="col-md-8 mt-3 offset-md-2">
-                <h4><a class="link" href="{% url 'posts' %}">Posts</a></h4>
-                <p>To see posts and comments, then go to <a class="link" href="{% url 'posts' %}">posts</a></p>
+            <div class="col-12 mt-3 left">
+                <div class="row">
+                    <div class="col-md-4">
+                    <h4><a class="link" href="/projects">Projects</a></h4>
+                            <p>To manage your construction projects, then go to <a class="link" href="/projects">projects</a></p>
+                </div>
+                <div class="col-md-4">
+                    <h4><a class="link" href="{% url 'properties' %}">Properties</a></h4>
+                            <p>To manage your properties, then fo to <a class="link" href="{% url 'properties' %}">properties</a></p>
+                </div>
+                <div class="col-md-4">
+                    <h4><a class="link" href="{% url 'posts' %}">Posts</a></h4>
+                            <p>To see posts and comments, then go to <a class="link" href="{% url 'posts' %}">posts</a></p>
+                </div>
             </div>
         </div>
     </div>
     {% else %}
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 mt-3 offset-md-2">
-                <h3>REMS</h3>
-                <p> In REMS you will manage Real Estate projects in collaboration with your team. If
-                    you
-                    have not created an account yet, then <a class="link" href="{% url 'account_signup' %}">sign up</a>
-                    first. or <a class="link" href="{% url 'account_login' %}">sign in</a></p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-8 mt-3 offset-md-2">
-                
-            </div>
-        </div>
+    <h1>REMS</h1>
+    <div class="container-fluid second-bg">
+        <p> In REMS you will manage Real Estate projects in collaboration with your team. If you
+            have not created an account yet, then <a class="link" href="/accounts/signup/">sign up</a>
+            first. or <a class="link" href="/accounts/login/">sign in</a>
+        </p>    
     </div>
     {% endif %}
 </div>

@@ -1,16 +1,16 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <main class="container">
+    <main class="container first-bg">
         <h1>Edit Project</h1>
-        <form method="POST">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <div>
-                <p>
-                    <button type="submit" class="waves-effect waves-light btn">Update Project</button>
-                </p>
-            </div>
-        </form>
+        <div class="container-fluid second-bg">
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div>
+                    <button type="submit" class="waves-effect waves-light btn btn-signup">Update Project</button>
+                </div>
+            </form>
+        </div>
     </main>
 {%endblock%}

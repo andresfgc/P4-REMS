@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 
 {% block content %}
-<main class="container">
+<main class="container first-bg">
     <h1>Projects</h1>
-    <br>
-    <a class="waves-effect waves-light btn btn-signup" href="/add_project">Add a project</a>
-    <table>
+    <div class="container-fluid second-bg">
+        <a class="waves-effect waves-light btn btn-signup" href="/add_project">Add a project</a>
+    <table class="col-12 mt-3 left">
         {% for project in projects %}
             <tr>
                 <td>{{ project.project_name }}</td>
@@ -21,5 +21,6 @@
         <tr><td>You haven't added any projects yet</td></tr>
         {% endfor %}
     </table>
+    </div>
 </main>
 {%endblock%}

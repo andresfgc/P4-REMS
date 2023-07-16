@@ -5,18 +5,39 @@ body {
     background-color: #F9FAFC;
   }
 
+
+.first-bg {
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+
+.second-bg {
+  padding-bottom: 24px;
+  padding-top: 10px;
+  text-align: center;
+  background-color: #fff;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
+  box-sizing: border-box;
+  margin: 40px 0 0;
+  padding: 20px 0 28px;
+}
+
+
 /* for properties & projects */
 main {
     flex: 1 0 auto;
   }
 
-#id_Status {
+/* #id_Status {
   display: block;
 }
 
 #id_project {
   display: block;
-}
+} */
 
 /* for Posts & comments */
 .brand {
@@ -43,7 +64,7 @@ main {
 }
 
 .main-bg {
-  background-color: #F9FAFC;
+  background-color: #f0f2f5;
 }
 
 .card {
