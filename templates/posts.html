@@ -4,7 +4,7 @@
 <main class="container">
     <h1>Posts</h1>
     <br>
-    <a class="waves-effect waves-light btn" href="/add_post">Add a Post</a>
+    <a class="waves-effect waves-light btn btn-signup" href="/add_post">Add a Post</a>
     <div class="container-fluid">
         <div class="row">
             <!-- Blog Entries Column -->
@@ -34,14 +34,10 @@
                                     {{ post.number_of_likes }}</p>
                                 <tr>
                                     <td>
-                                        <a href="/edit_post/{{ post.slug }}">
-                                            <button>Edit</button>
-                                        </a>
+                                        <a  class="btn btn-signup" href="/edit_post/{{ post.slug }}">Edit</a>
                                     </td>
                                     <td>
-                                        <a href="/delete_post/{{ post.slug }}">
-                                            <button>Delete</button>
-                                        </a>
+                                        <a class="btn btn-signup" href="/delete_post/{{ post.slug }}">Delete</a>
                                     </td>
                                 </tr>
                             </div>

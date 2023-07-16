@@ -4,7 +4,7 @@
 <main class="container">
     <h1>Properties</h1>
     <br>
-    <a class="waves-effect waves-light btn" href="/add">Add a property</a>
+    <a class="waves-effect waves-light btn btn-signup" href="/add">Add a property</a>
     <table>
         {% for property in properties %}
             <tr>
@@ -13,14 +13,10 @@
                 <td>{{ property.Status }}</td>
                 <td>{{ property.project }}</td>
                 <td>
-                    <a href="/edit/{{ property.id }}">
-                        <button>Edit</button>
-                    </a>
+                    <a class="btn btn-signup" href="/edit/{{ property.id }}">Edit</a>
                 </td>
                 <td>
-                    <a href="/delete/{{ property.id }}">
-                        <button>Delete</button>
-                    </a>
+                    <a class="btn btn-signup" href="/delete/{{ property.id }}">Delete</a>
                 </td>
             </tr>
         {% empty %}

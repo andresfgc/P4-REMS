@@ -4,21 +4,17 @@
 <main class="container">
     <h1>Projects</h1>
     <br>
-    
+    <a class="waves-effect waves-light btn btn-signup" href="/add_project">Add a project</a>
     <table>
         {% for project in projects %}
             <tr>
                 <td>{{ project.project_name }}</td>
                 <td>{{ project.Adress }}</td>
                 <td>
-                    <a href="/edit_project/{{ project.id }}">
-                        <button>Edit</button>
-                    </a>
+                    <a class="btn btn-signup" href="/edit_project/{{ project.id }}">Edit</a>
                 </td>
                 <td>
-                    <a href="/delete_project/{{ project.id }}">
-                        <button>Delete</button>
-                    </a>
+                    <a class="btn btn-signup" href="/delete_project/{{ project.id }}">Delete</a>
                 </td>
             </tr>
         {% empty %}
