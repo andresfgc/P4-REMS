@@ -183,3 +183,8 @@ main {
 .d-inline {
   display: inline;
 }
+
+/* footer */
+footer {
+  text-align: center;
+}
