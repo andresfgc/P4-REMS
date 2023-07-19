@@ -1,6 +1,6 @@
 <h1 align="center">Minefield - Portfolio Project 3</h1>
 
-![Minefield]()
+![REMS]()
 
 Minefield is a python terminal game of [minesweeper](https://en.wikipedia.org/wiki/Minesweeper_(video_game)) and it is deployed on Heroku.
 
@@ -14,7 +14,7 @@ Every time the game ends, either because the player stepped on a mine or won, th
 
 Once the user has finished the interaction with the program, it will update the ranking for the next interaction.
 
-The deployed application can be found at [minefield](https://minefield.herokuapp.com/)
+The deployed application can be found at [REMS](https://rems-ag-58c10e6f7952.herokuapp.com/)
 ## UX & Design
 
 ### User Stories

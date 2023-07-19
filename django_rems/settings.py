@@ -32,7 +32,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['rems-ag-58c10e6f7952.herokuapp.com', 'localhost']
+X_FRAME_OPTIONS = 'SAMEORIGIN'
+
+ALLOWED_HOSTS = ['8000-andresfgc-rems-u2kxlv8rhnk.ws-eu101.gitpod.io', 'localhost']
 
 
 # Application definition
