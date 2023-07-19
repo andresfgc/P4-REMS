@@ -34,7 +34,7 @@ DEBUG = False
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-ALLOWED_HOSTS = ['8000-andresfgc-rems-u2kxlv8rhnk.ws-eu101.gitpod.io', 'localhost']
+ALLOWED_HOSTS = ['rems-ag-58c10e6f7952.herokuapp.com', 'localhost']
 
 
 # Application definition
