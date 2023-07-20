@@ -7,20 +7,17 @@ from cloudinary.models import CloudinaryField
 
 class Project(models.Model):
     project_name = models.CharField(max_length=50, null=False, blank=False)
-    Adress = models.CharField(max_length=50, null=False, blank=False)
+    address = models.CharField(max_length=50, null=False, blank=False)
 
     def __str__(self):
         return self.project_name
 
 
 class Property(models.Model):
-    PropertyStatus= models.TextChoices("PropertyStatus", "Available Quoted Reserved Rejected Sold")
-    #Location = models.ForeignKey(Project, on_delete=models.CASCADE)
+    property_status= models.TextChoices("property_status", "Available Quoted Reserved Rejected Sold")
     property_number = models.CharField(max_length=50, null=False, blank=False)
-    Status = models.CharField(blank=True, choices=PropertyStatus.choices, max_length=10)
-    #Sold = models.BooleanField(null=False, blank=False, default=False)
-    Price = models.IntegerField(null=False, blank=False)
-    # last_modified = models.DateField(auto_now=True)
+    status = models.CharField(blank=True, choices=property_status.choices, max_length=10)
+    price = models.IntegerField(null=False, blank=False)
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
     
     def __str__(self):
@@ -30,12 +27,12 @@ class Property(models.Model):
 STATUS = ((0, "Draft"), (1, "Published"))
 
 
-class Post(models.Model):
+class Ticket(models.Model):
     property = models.OneToOneField(Property, on_delete=models.CASCADE, primary_key=True)
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="blog_posts"
+        User, on_delete=models.CASCADE, related_name="blog_tickets"
     )
     featured_image = CloudinaryField('image', default='placeholder')
     excerpt = models.TextField(blank=True)
@@ -44,7 +41,7 @@ class Post(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(
-        User, related_name='blogpost_like', blank=True)
+        User, related_name='blogticket_like', blank=True)
 
     class Meta:
         ordering = ["-created_on"]
@@ -57,7 +54,7 @@ class Post(models.Model):
 
 
 class Comment(models.Model):
-    post = models.ForeignKey(Post, on_delete=models.CASCADE,
+    ticket = models.ForeignKey(Ticket, on_delete=models.CASCADE,
                              related_name="comments")
     name = models.CharField(max_length=80)
     email = models.EmailField()

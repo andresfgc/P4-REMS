@@ -4,13 +4,13 @@
 <main class="container first-bg">
     <h1>Properties</h1>
     <div class="container-fluid second-bg">
-        <a class="waves-effect waves-light btn btn-signup" href="/add">Add a property</a>
+        <a class="waves-effect waves-light btn btn-signup" href="/add">Add a Property</a>
     <table class="col-12 mt-3 left">
         {% for property in properties %}
             <tr>
                 <td>{{ property.property_number }}</a></td>
-                <td>{{ property.Price }}€</td>
-                <td>{{ property.Status }}</td>
+                <td>{{ property.price }}€</td>
+                <td>{{ property.status }}</td>
                 <td>{{ property.project }}</td>
                 <td>
                     <a class="btn btn-signup" href="/edit/{{ property.id }}">Edit</a>

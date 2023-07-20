@@ -4,12 +4,12 @@
 <main class="container first-bg">
     <h1>Projects</h1>
     <div class="container-fluid second-bg">
-        <a class="waves-effect waves-light btn btn-signup" href="/add_project">Add a project</a>
+        <a class="waves-effect waves-light btn btn-signup" href="/add_project">Add a Project</a>
     <table class="col-12 mt-3 left">
         {% for project in projects %}
             <tr>
                 <td>{{ project.project_name }}</td>
-                <td>{{ project.Adress }}</td>
+                <td>{{ project.address }}</td>
                 <td>
                     <a class="btn btn-signup" href="/edit_project/{{ project.id }}">Edit</a>
                 </td>

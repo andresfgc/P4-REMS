@@ -2,13 +2,13 @@
 
 {% block content %}
     <main class="container first-bg">
-        <h1>Edit Post</h1>
+        <h1>Edit Ticket</h1>
         <div class="container-fluid second-bg">
             <form method="POST">
                 {% csrf_token %}
                 {{ form.as_p }}
                 <div>
-                    <button type="submit" class="waves-effect waves-light btn btn-signup">Update Post</button>
+                    <button type="submit" class="waves-effect waves-light btn btn-signup">Update Ticket</button>
                 </div>
             </form>
         </div>

@@ -1,17 +1,17 @@
 from django import forms
-from .models import Property, Project, Comment, Post
+from .models import Property, Project, Comment, Ticket
 
 
 class PropertyForm(forms.ModelForm):
     class Meta:
         model = Property
-        fields = ['property_number', 'Price', 'Status', 'project']
+        fields = ['property_number', 'price', 'status', 'project']
 
 
 class ProjectForm(forms.ModelForm):
     class Meta:
         model = Project
-        fields = ['project_name', 'Adress']
+        fields = ['project_name', 'address']
 
 
 class CommentForm(forms.ModelForm):
@@ -20,7 +20,7 @@ class CommentForm(forms.ModelForm):
         fields = ('body',)
 
 
-class PostForm(forms.ModelForm):
+class TicketForm(forms.ModelForm):
     class Meta:
-        model = Post
+        model = Ticket
         fields = ['property', 'title', 'slug', 'author', 'featured_image', 'excerpt', 'content', 'status']

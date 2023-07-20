@@ -2,13 +2,13 @@
 
 {% block content %}
     <main class="container first-bg">
-        <h1>New Post</h1>
+        <h1>New Ticket</h1>
         <div class="container-fluid second-bg">
-            <form method="POST" action="add_post">
+            <form method="POST" action="add_ticket">
                 {% csrf_token %}
                 {{ form.as_p }}
                 <div>
-                    <button type="submit" class="waves-effect waves-light btn btn-signup">Add post</button>
+                    <button type="submit" class="waves-effect waves-light btn btn-signup">Add Ticket</button>
                 </div>
             </form>
         </div>

@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
-from .models import Project, Property, Post, Comment
-from .forms import PropertyForm, ProjectForm, CommentForm, PostForm
+from .models import Project, Property, Ticket, Comment
+from .forms import PropertyForm, ProjectForm, CommentForm, TicketForm
 # Create your views here.
 
 
@@ -89,62 +89,62 @@ def delete_project(request, project_id):
     return redirect('projects')
 
 
-# for Posts.
-class PostList(generic.ListView):
-    model = Post
-    queryset = Post.objects.filter(status=1).order_by('-created_on')
-    template_name = 'posts.html'
+# for Tickets.
+class TicketList(generic.ListView):
+    model = Ticket
+    queryset = Ticket.objects.filter(status=1).order_by('-created_on')
+    template_name = 'tickets.html'
     paginate_by = 6
 
 
-    def add_post(request):
+    def add_ticket(request):
         if request.method == 'POST':
-            form = PostForm(request.POST)
+            form = TicketForm(request.POST)
             if form.is_valid():
                 form.save()
-                return redirect('posts')
-        form = PostForm()
+                return redirect('tickets')
+        form = TicketForm()
         context = {
             'form': form
         }
-        return render(request, 'add_post.html', context)
+        return render(request, 'add_ticket.html', context)
 
 
-    def edit_post(request, slug):
-        post = get_object_or_404(Post, slug=slug)
+    def edit_ticket(request, slug):
+        ticket = get_object_or_404(Ticket, slug=slug)
         if request.method == 'POST':
-            form = PostForm(request.POST, instance=post)
+            form = TicketForm(request.POST, instance=ticket)
             if form.is_valid():
                 form.save()
-                return redirect('posts')
-        form = PostForm(instance=post)
+                return redirect('tickets')
+        form = TicketForm(instance=ticket)
         context = {
             'form': form
         }
-        return render(request, 'edit_post.html', context)
+        return render(request, 'edit_ticket.html', context)
 
     
-    def delete_post(request, slug):
-        post = get_object_or_404(Post, slug=slug)
-        post.delete()
-        return redirect('posts')
+    def delete_ticket(request, slug):
+        ticket = get_object_or_404(Ticket, slug=slug)
+        ticket.delete()
+        return redirect('tickets')
 
 
-class PostDetail(View):
+class TicketDetail(View):
 
     def get(self, request, slug, *args, **kwargs):
-        queryset = Post.objects.filter(status=1)
-        post = get_object_or_404(queryset, slug=slug)
-        comments = post.comments.order_by('created_on')
+        queryset = Ticket.objects.filter(status=1)
+        ticket = get_object_or_404(queryset, slug=slug)
+        comments = ticket.comments.order_by('created_on')
         liked = False
-        if post.likes.filter(id=self.request.user.id).exists():
+        if ticket.likes.filter(id=self.request.user.id).exists():
             liked = True
 
         return render(
             request,
-            "post_detail.html",
+            "ticket_detail.html",
             {
-                "post": post,
+                "ticket": ticket,
                 "comments": comments,
                 "commented": False,
                 "liked": liked,
@@ -154,11 +154,11 @@ class PostDetail(View):
 
 
     def post(self, request, slug, *args, **kwargs):
-        queryset = Post.objects.filter(status=1)
-        post = get_object_or_404(queryset, slug=slug)
-        comments = post.comments.order_by('created_on')
+        queryset = Ticket.objects.filter(status=1)
+        ticket = get_object_or_404(queryset, slug=slug)
+        comments = ticket.comments.order_by('created_on')
         liked = False
-        if post.likes.filter(id=self.request.user.id).exists():
+        if ticket.likes.filter(id=self.request.user.id).exists():
             liked = True
 
         comment_form = CommentForm(data=request.POST)
@@ -167,16 +167,16 @@ class PostDetail(View):
             comment_form.instance.email = request.user.email
             comment_form.instance.name = request.user.username
             comment = comment_form.save(commit=False)
-            comment.post = post
+            comment.ticket = ticket
             comment.save()
         else:
             comment_form = CommentForm()
 
         return render(
             request,
-            "post_detail.html",
+            "ticket_detail.html",
             {
-                "post": post,
+                "ticket": ticket,
                 "comments": comments,
                 "commented": True,
                 "liked": liked,
@@ -185,17 +185,17 @@ class PostDetail(View):
         )
 
 
-class PostLike(View):
+class TicketLike(View):
 
     def post(self, request, slug):
-        post = get_object_or_404(Post, slug=slug)
+        ticket = get_object_or_404(Ticket, slug=slug)
 
-        if post.likes.filter(id=request.user.id).exists():
-            post.likes.remove(request.user)
+        if ticket.likes.filter(id=request.user.id).exists():
+            ticket.likes.remove(request.user)
         else:
-            post.likes.add(request.user)
+            ticket.likes.add(request.user)
 
-        return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+        return HttpResponseRedirect(reverse('ticket_detail', args=[slug]))
 
 
 # homepage

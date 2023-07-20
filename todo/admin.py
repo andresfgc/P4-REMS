@@ -1,12 +1,12 @@
 from django.contrib import admin
-from .models import Project, Property, Post, Comment
+from .models import Project, Property, Ticket, Comment
 from django_summernote.admin import SummernoteModelAdmin
 
 # Register your models here.
 
 
-@admin.register(Post)
-class PostAdmin(SummernoteModelAdmin):
+@admin.register(Ticket)
+class TicketAdmin(SummernoteModelAdmin):
 
     list_display = ('title', 'slug', 'status', 'created_on')
     search_fields = ['title', 'content']
@@ -17,13 +17,9 @@ class PostAdmin(SummernoteModelAdmin):
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ('name', 'body', 'post', 'created_on', 'approved')
+    list_display = ('name', 'body', 'ticket', 'created_on', 'approved')
     list_filter = ('approved', 'created_on')
     search_fields = ('name', 'email', 'body')
-    # actions = ['approve_comments']
-
-    # def approve_comments(self, request, queryset):
-    #     queryset.update(approved=True)
 
 
 admin.site.register(Property)

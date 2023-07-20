@@ -39,7 +39,7 @@ main {
   display: block;
 } */
 
-/* for Posts & comments */
+/* for tickets & comments */
 .brand {
   font-family: Lato, sans-serif;
   font-size: 1.4rem;
@@ -124,22 +124,22 @@ main {
   z-index: 100;
 }
 
-.post-link {
+.ticket-link {
   text-decoration: none;
   color: #445261;
 }
 
-.post-link:hover,
-.page-link {
+.ticket-link:hover,
+.ticket-link {
   color: #E84610;
 }
 
-.post-title {
+.ticket-title {
   margin-top: 20%;
   margin-left: 5%;
 }
 
-.post-subtitle {
+.ticket-subtitle {
   margin-left: 5%;
   color: lightgray;
 }
@@ -179,7 +179,7 @@ main {
   border: none;
 }
 
-/* post_details */
+/* ticket_details */
 .d-inline {
   display: inline;
 }

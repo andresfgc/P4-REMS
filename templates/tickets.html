@@ -2,41 +2,41 @@
 
 {% block content %}
 <main class="container first-bg">
-    <h1>Posts</h1>
+    <h1>Tickets</h1>
     <div class="container-fluid second-bg">
-        <a class="waves-effect waves-light btn btn-signup" href="/add_post">Add a Post</a>
+        <a class="waves-effect waves-light btn btn-signup" href="/add_ticket">Add a Ticket</a>
         <div class="row">
             <!-- Blog Entries Column -->
             <div class="col-12 mt-3 left">
                 <div class="row">
-                    {% for post in post_list %}
+                    {% for ticket in ticket_list %}
                     <div class="col-md-4">
                         <div class="card mb-4">
                             <div class="card-body">
                                 <div class="image-container">
-                                    {% if "placeholder" in post.featured_image.url %}
+                                    {% if "placeholder" in ticket.featured_image.url %}
                                     <img class="card-img-top"
                                         src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg">
                                     {% else %}
-                                    <img class="card-img-top" src=" {{ post.featured_image.url }}">
+                                    <img class="card-img-top" src=" {{ ticket.featured_image.url }}">
                                     {% endif %}
                                     <div class="image-flash">
-                                        <p class="author">Author: {{ post.author }}</p>
+                                        <p class="author">Author: {{ ticket.author }}</p>
                                     </div>
                                 </div>
-                                <a href="{% url 'post_detail' post.slug %}" class="post-link">
-                                    <h2 class="card-title">{{ post.title }}</h2>
-                                    <p class="card-text">{{ post.excerpt }}</p>
+                                <a href="{% url 'ticket_detail' ticket.slug %}" class="ticket-link">
+                                    <h2 class="card-title">{{ ticket.title }}</h2>
+                                    <p class="card-text">{{ ticket.excerpt }}</p>
                                 </a>
                                 <hr />
-                                <p class="card-text text-muted h6">{{ post.created_on}} <i class="far fa-heart"></i>
-                                    {{ post.number_of_likes }}</p>
+                                <p class="card-text text-muted h6">{{ ticket.created_on}} <i class="far fa-heart"></i>
+                                    {{ ticket.number_of_likes }}</p>
                                 <tr>
                                     <td>
-                                        <a  class="btn btn-signup" href="/edit_post/{{ post.slug }}">Edit</a>
+                                        <a  class="btn btn-signup" href="/edit_ticket/{{ ticket.slug }}">Edit</a>
                                     </td>
                                     <td>
-                                        <a class="btn btn-signup" href="/delete_post/{{ post.slug }}">Delete</a>
+                                        <a class="btn btn-signup" href="/delete_ticket/{{ ticket.slug }}">Delete</a>
                                     </td>
                                 </tr>
                             </div>
