@@ -1,6 +1,6 @@
-<h1 align="center">Minefield - Portfolio Project 3</h1>
+<h1 align="center">REMS - Portfolio Project 4</h1>
 
-![REMS]()
+![REMS](media/REMS.jpg)
 
 REMS is inspired by the sections "Database Management Systems" with its project "Task Manager" and "Full Stack Frameworks" with its project "I think therefore I Blog", together with the personal interest in the area of real estate management, hence the name Real Estate Management System.
 
@@ -15,8 +15,6 @@ Within REMS the user can:
 3. create, edit and delete properties related to the existing project.
 4. create, edit, delete and like tickets containing additional information about the current status of the property.
 5. document all relevant facts about the property.
-
-Translated with www.DeepL.com/Translator (free version)
 
 The deployed application can be found at [REMS](https://rems-ag-58c10e6f7952.herokuapp.com/)
 ## UX & Design
@@ -78,11 +76,20 @@ User Stories are docummented inside the **REMS User Stories Project**
 
 ## Features
 
-* Welcome screen
-  * The user is welcomed with an introduction to the game's theme, telling him/her the number of hidden mines.
-  * The user will be asked to enter his/her name.
+* Main Page
+  * The main page offers a short description of the program along with the option to create an account or if the user has already registered, then he/she has the option to sign in.
+  * If the user clicks the **Sign Up** button or the **Register** button on the top left he/she will be sent to the corresponding page where he/she will have to enter the name, email(optional) and password. If the user doesn't enter the minimum required data, the program will display a text where it will let the user know what he/she has to change in order to create the account and enter the platform.
+  * If the user clicks the **Sing In** button, he will be forwarded to the corresponding page where he will have to give his username and password, with the possibility of being remembered for future logins.
+  * Once the registration button is clicked and the data is correct or user has signed in, the user will be redirected again to the main page, will get a green notification on the top center **Successfully signed in as USERNAME** (notification will disappear after 3 seconds) and he/she can now see a navigation bar on the top left (Projects, Properties Ticekts and Sing Out) and in the center he/she can read a short description about the project-, property- & ticket pages with their corresponding links.
+  * If the user wants to come back to the main page (Index) during his/her interaction, he/she can click the **REMS** top-left.
+  * If the user wants to signout he/she will frist have to click on the **Sign Out** button on the top-left. Then he/she will be forwarded to the Sign Out page where user will be asked again if he/she really wants to signout. Once user clicks again the **Sign Out** button he/she will be redirected to the main page where user can signin or register a new account and he/she will no longer be able to see the projects, properties and tickets pages on the navigation bar.
 
-![welcome screen](media/welcome_name.JPG)
+![Main Page](media/main_page.jpg)
+![Sign Up Page](media/signup_page.jpg)
+![Sign In Page](media/signin_page.jpg)
+![Main Page - Signed in with notification](media/main_page_signedin_notificaion.jpg)
+![Main Page - Signed in after 3 seconds](media/main_page_signedin.jpg)
+![Sign Out Page](media/signout_page.jpg)
 
 * Menu
   * The user will be presented with three options. Number 1 will send the user to start the game, number 2 will present the ranking and number 3 will finish the interaction with the application.
@@ -90,30 +97,12 @@ User Stories are docummented inside the **REMS User Stories Project**
 
 ![Menu](media/menu.JPG)
 
-* Game
-  * The user is presented with the two simple rules of the game in order to give valid coordinates and to know how much he/she will win for each correct coordinate.
-  * The user will be able to see the coordinate data represented on the board.
-  * The user can see at the bottom of the board the coordinates previously given and current score.
-  * If the user steps on a mine, user will be informed of it, his/her score will be presented, the location of the mines will be shown and the menu function will appear (2. image "Game lose").
-  * If the user wins the game, user will be informed about it, his/her score will be displayed and the menu function will appear (3. image "Game win").
-
-![Game](media/game.JPG)
-
-![Game lose](media/game_lose.JPG)
-
-![Game win](media/game_win.JPG)
-
-* Ranking
-  * The user will be able to see the top 10 scores of other players and below the ranking, the menu function will appear.
-
-![Ranking](media/ranking.JPG)
-
 ### Features left to implement
-* Revealed position controller:
-  * I plan to add a function that checks the coordinates given by the user with the coordinates previously revealed by the function "check_mines_around". this way users will not be able to add points by giving coordinates that have already been previously revealed to them.
+* Restrict access without signing in:
+  * I plan to add a rule that allow access to projects, properties and tickets pages only for signed in users.
 
-* Real-time score updater:
-  * I plan to add a function that updates the score as soon as it is saved in the worksheet "ranking".This way users will be able to know if they have achieved a place in the ranking without having to finish the interaction and start it again.
+* Single Sign On function:
+  * I plan to add a SSO function with Google, Microsoft or social media accounts.
 
 ### Technologies Used
 
