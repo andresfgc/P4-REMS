@@ -2,35 +2,68 @@
 
 ![REMS]()
 
-Minefield is a python terminal game of [minesweeper](https://en.wikipedia.org/wiki/Minesweeper_(video_game)) and it is deployed on Heroku.
+REMS is inspired by the sections "Database Management Systems" with its project "Task Manager" and "Full Stack Frameworks" with its project "I think therefore I Blog", together with the personal interest in the area of real estate management, hence the name Real Estate Management System.
 
-The game presents an introduction to the game's theme. The player is then prompted to enter his or her name.
+REMS is a tool that allows the user to document and share the current status of the properties with his team during the sales period. 
 
-Once the user has given his name, he will have a menu with 3 options at his disposal. Option 1 allows the user to start the game, option 2 allows the user to view the ranking and option 3 allows the user to end the interaction with the program.
+In this project it was possible to put into practice fundamental topics such as database creation, agile methodology and CRUD.
 
-If the user starts the game, he will be explained how to give the coordinates and will be presented with the minefield, the user can take values from 1 to 5 to give his coordinates. 
+Within REMS the user can:
 
-Every time the game ends, either because the player stepped on a mine or won, the score obtained will be saved and the menu will be presented for the user to decide if he wants to continue playing, check the ranking or end the interaction with the program.
+1. create an account and then sign in or out of REMS as many times as he/she wants.
+2. create, edit and delete projects at any time he/she wishes.
+3. create, edit and delete properties related to the existing project.
+4. create, edit, delete and like tickets containing additional information about the current status of the property.
+5. document all relevant facts about the property.
 
-Once the user has finished the interaction with the program, it will update the ranking for the next interaction.
+Translated with www.DeepL.com/Translator (free version)
 
 The deployed application can be found at [REMS](https://rems-ag-58c10e6f7952.herokuapp.com/)
 ## UX & Design
 
 ### User Stories
 
-* As a user, I want to be able to type my name and know if the information is valid.
-* As a user, I want to be able to read the rules of the game.
-* As a user, I want to be able to know how many mines are in the minefield.
-* As a user, I want to be able to see the current ranking.
-* As a user, I want to be able to see the given coordinate represented in the minefield.
-* As a user, I want to be able to see the number of mines around the given position.
-* As a user, I want to be able to see what coordinates I have entered during the game.
-* As a user, I want to be able to see my score during and at the end of the game.
-* As a user, I want to be able to know if the coordinates I am entering are valid.
-* As a user, I want to be able to see mines when I lose.
-* As a user, I want to be able to replay the game as many times as I want.
-* As a user, I want to be able to exit the game.
+User Stories are docummented inside the **REMS User Stories Project**
+
+* USER STORY: CRUD for Projects
+  * As a Site User/Site Admin I can manage projects so that the project information can be reviewed and updated in real time.
+  * Accepante Criteria:
+    * Enable the display of all projects
+    * Enable the creation of projects
+    * Enable editing the name and address of each project
+    * Enable deleting projects
+
+* USER STORY: CRUD for Properties
+  * As a Site User/Site Admin I can manage properties so that the property´s information can be reviewed and updated in real time.
+  * Accepante Criteria:
+    * Enable the display of all properties
+    * Enable the creation of properties
+    * Enable editing the property name, price, status and related project
+    * Enable deleting properties
+
+* USER STORY: CRUD for Tickets
+  * As a Site User/Site Admin I can manage tickets so that the ticket's information can be reviewed and updated in real time.
+  * Accepante Criteria:
+    * Enable the display of all tickets
+    * Enable the creation of one ticket for each property
+    * Enable editing property, title, slug, author, image, excerpt, content & status for each ticket
+    * Enable deleting tickets
+
+* USER STORY: Comment & Like a ticket
+  * As a Site User/Site Admin I can comment a ticket so that the team can document all related activities for each property.
+  * Accepante Criteria:
+    * Enable commenting any ticket
+    * Enable adding many comments for the same ticket
+    * Enable reading the author, date, time of each ticket and comment
+    * Enable seeing likes
+    * Enable adding & removing ticket´s likes
+
+* USER STORY: Sign Up, Sign In & Sign Out
+  * As a Site User/Site Admin I can create an account so that my team can see who creates and comments tickets.
+  * Accepante Criteria:
+    * Enable to Sign Up
+    * Enable to Sign In
+    * Enable to Sign Out
 
 ### Flowchart
 
