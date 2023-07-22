@@ -2,27 +2,36 @@
 
 {% block content %}    
 <main class="container first-bg">
-    <h1>Properties</h1>
+    <h1 class="h-center">Properties</h1>
     <div class="container-fluid second-bg">
         <a class="waves-effect waves-light btn btn-signup" href="/add">Add a Property</a>
-    <table class="col-12 mt-3 left">
-        {% for property in properties %}
-            <tr>
-                <td>{{ property.property_number }}</a></td>
-                <td>{{ property.price }}€</td>
-                <td>{{ property.status }}</td>
-                <td>{{ property.project }}</td>
-                <td>
-                    <a class="btn btn-signup" href="/edit/{{ property.id }}">Edit</a>
-                </td>
-                <td>
-                    <a class="btn btn-signup" href="/delete/{{ property.id }}">Delete</a>
-                </td>
-            </tr>
-        {% empty %}
-        <tr><td>You haven't added any properties yet. Before adding any property you must first create a project</td></tr>
-        {% endfor %}
-    </table>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Number</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Project</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                {% for property in properties %}
+                    <tr>
+                        <td>{{ property.property_number }}</a></td>
+                        <td>{{ property.price }}€</td>
+                        <td>{{ property.status }}</td>
+                        <td>{{ property.project }}</td>
+                        <td class="d-grid gap-2 d-md-block">
+                            <a class="btn btn-signup" href="/edit/{{ property.id }}">Edit</a>
+                            <a class="btn btn-signup" href="/delete/{{ property.id }}">Delete</a>
+                        </td>
+                    </tr>
+                {% empty %}
+                <tr><td>You haven't added any properties yet. Before adding any property you must first create a project</td></tr>
+                {% endfor %}
+            </table>
+        </div>
     </div>
     <br>
 </main>

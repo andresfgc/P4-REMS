@@ -25,19 +25,15 @@ body {
   padding: 20px 0 28px;
 }
 
+.h-center {
+  text-align: center;
+  }
+
 
 /* for properties & projects */
 main {
     flex: 1 0 auto;
   }
-
-/* #id_Status {
-  display: block;
-}
-
-#id_project {
-  display: block;
-} */
 
 /* for tickets & comments */
 .brand {
