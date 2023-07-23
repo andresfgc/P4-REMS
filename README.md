@@ -23,6 +23,13 @@ The deployed application can be found at [REMS](https://rems-ag-58c10e6f7952.her
 
 User Stories are docummented inside the **REMS User Stories Project**
 
+* USER STORY: Sign Up, Sign In & Sign Out
+  * As a Site User/Site Admin I can create an account so that my team can see who creates and comments tickets.
+  * Accepante Criteria:
+    * Enable to Sign Up
+    * Enable to Sign In
+    * Enable to Sign Out
+
 * USER STORY: CRUD for Projects
   * As a Site User/Site Admin I can manage projects so that the project information can be reviewed and updated in real time.
   * Accepante Criteria:
@@ -56,23 +63,22 @@ User Stories are docummented inside the **REMS User Stories Project**
     * Enable seeing likes
     * Enable adding & removing ticket´s likes
 
-* USER STORY: Sign Up, Sign In & Sign Out
-  * As a Site User/Site Admin I can create an account so that my team can see who creates and comments tickets.
-  * Accepante Criteria:
-    * Enable to Sign Up
-    * Enable to Sign In
-    * Enable to Sign Out
-
 ### Flowchart
 
-#### Main Flowchart
-![main flowchart](media/flow_chart_main.JPG)
+#### Sign Up-In-Out
+![Sign Up_In_Out](media/Flowchart_SignUp_In_Out.jpeg)
 
-#### Play game
-![play game option](media/flowchart_glay_game.JPG)
+#### Projects
+![Project Page](media/Flowchart_CRUD_projects.jpeg)
 
-#### Check ranking & quit game
-![Check ranking option](media/display_ranking_%26_quit_game.JPG)
+#### Properties
+![Property Page](media/Flowchart_CRUD_properties.jpeg)
+
+#### Tickets
+![Ticket Page](media/Flowchart_CRUD_tickets.jpeg)
+
+#### Comments & Likes
+![Comments & Likes page](media/Flowchart_Comment_Like.jpeg)
 
 ## Features
 
