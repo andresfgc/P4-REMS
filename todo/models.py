@@ -17,8 +17,7 @@ class Property(models.Model):
     property_status = models.TextChoices("property\
     _status", "Available Quoted Reserved Rejected Sold")
     property_number = models.CharField(max_length=50, null=False, blank=False)
-    status = models.CharField
-    (blank=True, choices=property_status.choices, max_length=10)
+    status = models.CharField(blank=True, choices=property_status.choices, max_length=10)
     price = models.IntegerField(null=False, blank=False)
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
 
@@ -30,8 +29,7 @@ STATUS = ((0, "Draft"), (1, "Published"))
 
 
 class Ticket(models.Model):
-    property = models.OneToOneField
-    (Property, on_delete=models.CASCADE, primary_key=True)
+    property = models.OneToOneField(Property, on_delete=models.CASCADE, primary_key=True)
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(
@@ -57,8 +55,7 @@ class Ticket(models.Model):
 
 
 class Comment(models.Model):
-    ticket = models.ForeignKey
-    (Ticket, on_delete=models.CASCADE, related_name="comments")
+    ticket = models.ForeignKey(Ticket, on_delete=models.CASCADE, related_name="comments")
     name = models.CharField(max_length=80)
     email = models.EmailField()
     body = models.TextField()
