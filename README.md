@@ -97,17 +97,29 @@ User Stories are docummented inside the **REMS User Stories Project**
 ![Main Page - Signed in after 3 seconds](media/main_page_signedin.jpg)
 ![Sign Out Page](media/signout_page.jpg)
 
-* Project Page
-  * The project page allows the user to view, edit and delete projects.
+* Projects Page
+  * The projects page allows the user to view, edit and delete projects.
   * If the user has not created any project the program will display a text inside the table indicating that it is empty.
   * When the user clicks on the "Add a Project" button, he/she will be redirected to the **add_project** page where he/she can enter the name and address.
-  * Once the fields are filled in and the "Add Project" button is clicked, the user will be redirected back to the project page where his/her newly created project will be displayed inside the table.
-  * On the right side of each project, the user has the option to edit or delete the proejct. If the user clicks on the "edit" button the **edit_project** page will oppen. Once the user clicks on the update button, the user will be redirected back to the project page where he/she will see the updated project data. If the user clicks the "delete" button the page will reload and the project will disappear.
+  * Once the fields are filled in and the "Add Project" button is clicked, the user will be redirected back to the projects page where his/her newly created project will be displayed inside the table.
+  * On the right side of each project, the user has the option to edit or delete the proejct. If the user clicks on the "edit" button the **edit_project** page will open. Once the user clicks on the update button, the user will be redirected back to the projects page where he/she will see the updated project data. If the user clicks the "delete" button the page will reload and the project will disappear.
 
-![Project Page](media/project_page_start.png)
-![Project Page/add_page](media/project_page_add.png)
-![Project Page/edit_page](media/project_page_edit.png)
-![Project Page - table](media/project_page_table.png)
+![Projects Page](media/project_page_start.jpg)
+![Projects Page/add_page](media/project_page_add.jpg)
+![Projects Page/edit_page](media/project_page_edit.jpg)
+![Projects Page - table](media/project_page_table.jpg)
+
+* Properties Page
+  * The properties page allows the user to view the created properties, edit them or delete them.
+  * If the user has not created any property, the program will show a text indicating that the property table is empty and that before creating a property he/she has to create a project.
+  * When the user clicks on the "add a property" button, he/she will be redirected to the **add_property** page where he/she can type the proeprty number, price, status (available, quoted, reserved, rejected, sold) and related project.
+  * Once the fields are filled in and the "add property" button is clicked the user will be redirected back to the property page where he/she will be able to see the newly created property in the table.
+  * On the right side of each property the user has the option to edit or delete the property. If the user clicks on the "edit" button the **edit_property** page will open. Once the user clicks on the update button, the user will be redirected back to the property page where he/she will see the updated property data. If the user clicks on the "delete" button the page will reload and the property will disappear.
+
+![Properties Page](media/property_page_start.jpg)
+![Properties Page/add_page](media/property_page_add.jpg)
+![Properties Page/edit_page](media/property_page_edit.jpg)
+![Properties Page - table](media/property_page_table.jpg)
 
 ### Features left to implement
 
@@ -118,7 +130,7 @@ User Stories are docummented inside the **REMS User Stories Project**
 * Single Sign On function:
   * I plan to add a SSO function with Google, Microsoft or social media accounts.
 
-#### For Project page
+#### For Projects page
 * Redirect to project's relevant properties:
   * I plan to give the user the option to be redirected to the project's relevant properties by clicking the name of the project.
 
@@ -127,6 +139,10 @@ User Stories are docummented inside the **REMS User Stories Project**
 
 * Deadline:
   * In plan to add the deadline by which the project is to be sold.
+
+#### For Properties page
+* Filter-function:
+  * I plan to add a filter-function where the user can select only relevant project's properties and another filter-function for the properties's status.
 
 ### Technologies Used
 
