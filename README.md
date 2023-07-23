@@ -102,7 +102,7 @@ User Stories are docummented inside the **REMS User Stories Project**
   * If the user has not created any project the program will display a text inside the table indicating that it is empty.
   * When the user clicks on the "Add a Project" button, he/she will be redirected to the **add_project** page where he/she can enter the name and address.
   * Once the fields are filled in and the "Add Project" button is clicked, the user will be redirected back to the projects page where his/her newly created project will be displayed inside the table.
-  * On the right side of each project, the user has the option to edit or delete the proejct. If the user clicks on the "edit" button the **edit_project** page will open. Once the user clicks on the update button, the user will be redirected back to the projects page where he/she will see the updated project data. If the user clicks the "delete" button the page will reload and the project will disappear.
+  * On the right side of each project, the user has the option to edit or delete it. If the user clicks on the "edit" button the **edit_project** page will open. Once the user clicks on the update button, the user will be redirected back to the projects page where he/she will see the updated project data. If the user clicks the "delete" button the page will reload and the project will disappear.
 
 ![Projects Page](media/project_page_start.jpg)
 ![Projects Page/add_page](media/project_page_add.jpg)
@@ -113,13 +113,27 @@ User Stories are docummented inside the **REMS User Stories Project**
   * The properties page allows the user to view the created properties, edit them or delete them.
   * If the user has not created any property, the program will show a text indicating that the property table is empty and that before creating a property he/she has to create a project.
   * When the user clicks on the "add a property" button, he/she will be redirected to the **add_property** page where he/she can type the proeprty number, price, status (available, quoted, reserved, rejected, sold) and related project.
-  * Once the fields are filled in and the "add property" button is clicked the user will be redirected back to the property page where he/she will be able to see the newly created property in the table.
-  * On the right side of each property the user has the option to edit or delete the property. If the user clicks on the "edit" button the **edit_property** page will open. Once the user clicks on the update button, the user will be redirected back to the property page where he/she will see the updated property data. If the user clicks on the "delete" button the page will reload and the property will disappear.
+  * Once the fields are filled in and the "add property" button is clicked the user will be redirected back to the properties page where he/she will be able to see the newly created property in the table.
+  * On the right side of each property the user has the option to edit or delete it. If the user clicks on the "edit" button the **edit_property** page will open. Once the user clicks on the update button, the user will be redirected back to the properties page where he/she will see the updated property data. If the user clicks on the "delete" button the page will reload and the property will disappear.
 
 ![Properties Page](media/property_page_start.jpg)
 ![Properties Page/add_page](media/property_page_add.jpg)
 ![Properties Page/edit_page](media/property_page_edit.jpg)
 ![Properties Page - table](media/property_page_table.jpg)
+
+* Tickets Page
+  * The tickets page allows the user to view the created tickets, edit them or delete them.
+  * The user will have to create first a project and then a property to finally be able to create a ticket.
+  * When the user clicks on the "add a Ticket" button, he/she will be redirected to the **add_ticket** page where he/she can type the related property, title, slug, author, image, excerpt, content and status (Draft or Published).
+  * Once the fields are filled in and the "add Ticket" button is clicked the user will be redirected back to the tickets page where he/she will be able to see the newly created ticket in the table.
+  * Beloww each ticket the user has the option to edit or delete it. If the user clicks on the "edit" button the **edit_ticket** page will open. Once the user clicks on the update button, the user will be redirected back to the tickets page where he/she will see the updated ticket data. If the user clicks on the "delete" button the page will reload and the ticket will disappear.
+
+![Tickets Page](media/tickets_page_start.jpg)
+![Tickets Page/add_page_1of2](media/tickets_page_add_1of2.jpg)
+![Tickets Page/add_page_2of2](media/tickets_page_add_2of2.jpg)
+![Tickets Page/edit_page_1of2](media/tickets_page_edit_1of2.jpg)
+![Tickets Page/edit_page_2of2](media/tickets_page_edit_2of2.jpg)
+![Tickets Page - grid](media/tickets_page_grid.jpg)
 
 ### Features left to implement
 
@@ -143,6 +157,19 @@ User Stories are docummented inside the **REMS User Stories Project**
 #### For Properties page
 * Filter-function:
   * I plan to add a filter-function where the user can select only relevant project's properties and another filter-function for the properties's status.
+
+#### For Tickets page
+* Remove already selected properties:
+  * I plan to remove properties that already have a ticket from the drop-down menu at the top of the add_ticket page.
+
+* Auto-complete function for slug:
+  * I plan to add an auto-complete function for the slug when using the user interface and not just the administrator interface. Right now the user has to right the correct amount to scores between each space inside the title otherwise the program wont save the ticket.
+
+* Auto-complete function for author:
+  * I plan to add an auto-complete function for the Author field without needing to click the drop-down menu.
+
+* Overview for draft-tickets:
+  * I plan to add an overview inside the tickets page for tickets that are still drafts. Right now only admin users inside the admin interface can see, edit and delete them.
 
 ### Technologies Used
 
