@@ -224,7 +224,7 @@ User Stories are docummented inside the **REMS User Stories Project**
 ## Testing
 
 I have manually tested this project by doing the following:
-* Passed the code through a PEP8 linter and confirmed there are no problems.
+* Passed the code through a [PEP8 linter](https://pep8ci.herokuapp.com/) and confirmed there are no problems.
 * Tested in my local terminal and the Code Institute Heroku terminal.
 * HTML, no errors were returned when passing through the official [W3C Validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Frems-ag-58c10e6f7952.herokuapp.com%2F).
 * CSS, no errors were returned when passing through the official [Jigsaw Validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Frems-ag-58c10e6f7952.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=es).
@@ -250,7 +250,7 @@ Remaining Bugs
 * Jshint
   * No JavaScript errors were returned from Jshint Validator
   
-![PEP8 linter](media/pep8_linter.JPG)
+![PEP8 linter](media/pep8_linter.jpg)
 
 ### User Stories Testing
 | User Goal | Requirement met | Image(s) |
