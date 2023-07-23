@@ -135,6 +135,16 @@ User Stories are docummented inside the **REMS User Stories Project**
 ![Tickets Page/edit_page_2of2](media/tickets_page_edit_2of2.jpg)
 ![Tickets Page - grid](media/tickets_page_grid.jpg)
 
+* Ticket Details Page
+  * The ticket details page allows the user to view the ticket description and comments, add new comments and give or remove the like.
+  * To like or unlike is as simple as clicking on the heart at the top left below the description. Right next to it the user can also see the number of comments that have been made within the ticket.
+  * The user can write his/her comment in the bottom right corner and add it to the ticket by clicking on the "submit" button. The comment will appear at the bottom left side of the screen, with the name and date of the user who created it.
+
+![Ticket details Page](media/comment_like_start.jpg)
+![Ticket details Page_1of3](media/comment_like_1of3.jpg)
+![Ticket details Page_1of3](media/comment_like_2of3.jpg)
+![Ticket details Page_1of3](media/comment_like_3of3.jpg)
+
 ### Features left to implement
 
 #### For Sign Up-In-Out
@@ -171,33 +181,54 @@ User Stories are docummented inside the **REMS User Stories Project**
 * Overview for draft-tickets:
   * I plan to add an overview inside the tickets page for tickets that are still drafts. Right now only admin users inside the admin interface can see, edit and delete them.
 
+#### For Ticket Details page
+* CRUD for comments:
+  * I plan to add the CRUD functionality for comments, where user can also edit or delete them.
+
+* Like to comments:
+  * I plan to add a like option for comments.
+
+* Reply to specific comments:
+  * I plan to add the function of replying to a specific comments when needed.
+
+* Get Notificacions:
+  * I plan to add a notifications function for every new comment posted.
+
 ### Technologies Used
 
   * Python
-    * All program was written in python.
-  * Google Sheets
-    * It is used to store the raking.
-  * Google Cloud
-    * It was used to enable the APIs needed.
+    * Most of the program was written in python.
+  * Django
+    * It's libraries were used to create the application.
   * Github
     * It was used to store the project.
   * Gitpod
     * It was used to create, add, commit and push my code to Github.
   * Heroku
     * It was used to deploy the project.
+  * Bootstrap
+    * It was used to add css style.
+  * gunicorn
+    * It is used to run Django on Heroku.
+  
+  
 
 ### Imported libraries
 
-  * Random was used to create and place mines inside the board.
-  * os was used clear the screen and improve user experience.
-  * islice was used to bring only the top ten score for the ranking.
-  * gspread was used to connect the program with Google Sheets to bring and update the ranking.
+  * dj_database_url & psycopg2 were used to work with PostgreSQL.
+  * dj3-cloudinary-storage was used to store the "building_placeholder" image.
+  * summernote was used to add an easy text-edition in admin panel.
+  * allauth was used to add authentication.
+  * crispy was used to create the comment form.
 
 ## Testing
 
 I have manually tested this project by doing the following:
 * Passed the code through a PEP8 linter and confirmed there are no problems.
 * Tested in my local terminal and the Code Institute Heroku terminal.
+* HTML, no errors were returned when passing through the official [W3C Validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Frems-ag-58c10e6f7952.herokuapp.com%2F).
+* CSS, no errors were returned when passing through the official [Jigsaw Validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Frems-ag-58c10e6f7952.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=es).
+* JS, no errors were returned when passing through the official [jshint](https://jshint.com/).
 
 ### Bugs
 
@@ -212,6 +243,12 @@ Remaining Bugs
 ### Validator Testing
 * PEP8
   * No errors were returned from CI Python Linter
+* W3C Validator
+  * No HTML errors were returned from W3C Validator
+* Jigsaw Validator
+  * No CSS errors were returned from Jigsaw Validator
+* Jshint
+  * No JavaScript errors were returned from Jshint Validator
   
 ![PEP8 linter](media/pep8_linter.JPG)
 

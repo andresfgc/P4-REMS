@@ -22,8 +22,10 @@ urlpatterns = [
     path('', views.homepage, name='home'),
     path('tickets', views.TicketList.as_view(), name='tickets'),
     path('add_ticket', views.TicketList.add_ticket, name='add_ticket'),
-    path('edit_ticket/<slug:slug>', views.TicketList.edit_ticket, name='edit_ticket'),
-    path('delete_ticket/<slug:slug>', views.TicketList.delete_ticket, name='delete_ticket'),
+    path('edit_ticket/<slug:slug>', views.TicketList.edit_ticket, name='\
+    edit_ticket'),
+    path('delete_ticket/<slug:slug>', views.TicketList.delete_ticket, name='\
+    delete_ticket'),
     path('like/<slug:slug>', views.TicketLike.as_view(), name='ticket_like'),
     path("accounts/", include("allauth.urls")),
     path('properties', views.get_properties, name='properties'),
@@ -33,7 +35,8 @@ urlpatterns = [
     path('projects', views.get_projects, name='projects'),
     path('add_project', views.add_project, name='add_project'),
     path('edit_project/<project_id>', views.edit_project, name='edit_project'),
-    path('delete_project/<project_id>', views.delete_project, name='delete_project'),
+    path('delete_project/<project_id>', views.delete_project, name='\
+    delete_project'),
     path('summernote', include('django_summernote.urls')),
     path('<slug:slug>/', views.TicketDetail.as_view(), name='ticket_detail'),
 ]

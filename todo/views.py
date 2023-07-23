@@ -47,6 +47,7 @@ def delete_property(request, property_id):
     property.delete()
     return redirect('properties')
 
+
 # for projects.
 def get_projects(request):
     projects = Project.objects.all()
@@ -96,7 +97,6 @@ class TicketList(generic.ListView):
     template_name = 'tickets.html'
     paginate_by = 6
 
-
     def add_ticket(request):
         if request.method == 'POST':
             form = TicketForm(request.POST)
@@ -108,7 +108,6 @@ class TicketList(generic.ListView):
             'form': form
         }
         return render(request, 'add_ticket.html', context)
-
 
     def edit_ticket(request, slug):
         ticket = get_object_or_404(Ticket, slug=slug)
@@ -123,7 +122,6 @@ class TicketList(generic.ListView):
         }
         return render(request, 'edit_ticket.html', context)
 
-    
     def delete_ticket(request, slug):
         ticket = get_object_or_404(Ticket, slug=slug)
         ticket.delete()
@@ -151,7 +149,6 @@ class TicketDetail(View):
                 "comment_form": CommentForm()
             },
         )
-
 
     def post(self, request, slug, *args, **kwargs):
         queryset = Ticket.objects.filter(status=1)
