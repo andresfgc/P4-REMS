@@ -97,18 +97,36 @@ User Stories are docummented inside the **REMS User Stories Project**
 ![Main Page - Signed in after 3 seconds](media/main_page_signedin.jpg)
 ![Sign Out Page](media/signout_page.jpg)
 
-* Menu
-  * The user will be presented with three options. Number 1 will send the user to start the game, number 2 will present the ranking and number 3 will finish the interaction with the application.
-  * The user has the option to end the interaction after giving his/her name, every game played, or checking the ranking.
+* Project Page
+  * The project page allows the user to view, edit and delete projects.
+  * If the user has not created any project the program will display a text inside the table indicating that it is empty.
+  * When the user clicks on the "Add a Project" button, he/she will be redirected to the **add_project** page where he/she can enter the name and address.
+  * Once the fields are filled in and the "Add Project" button is clicked, the user will be redirected back to the project page where his/her newly created project will be displayed inside the table.
+  * On the right side of each project, the user has the option to edit or delete the proejct. If the user clicks on the "edit" button the **edit_project** page will oppen. Once the user clicks on the update button, the user will be redirected back to the project page where he/she will see the updated project data. If the user clicks the "delete" button the page will reload and the project will disappear.
 
-![Menu](media/menu.JPG)
+![Project Page](media/project_page_start.png)
+![Project Page/add_page](media/project_page_add.png)
+![Project Page/edit_page](media/project_page_edit.png)
+![Project Page - table](media/project_page_table.png)
 
 ### Features left to implement
+
+#### For Sign Up-In-Out
 * Restrict access without signing in:
   * I plan to add a rule that allow access to projects, properties and tickets pages only for signed in users.
 
 * Single Sign On function:
   * I plan to add a SSO function with Google, Microsoft or social media accounts.
+
+#### For Project page
+* Redirect to project's relevant properties:
+  * I plan to give the user the option to be redirected to the project's relevant properties by clicking the name of the project.
+
+* Filter function:
+  * I plan to create a filter-function where the user can see only the projects that are currently relevant at a given time.
+
+* Deadline:
+  * In plan to add the deadline by which the project is to be sold.
 
 ### Technologies Used
 
