@@ -33,11 +33,13 @@ The deployed application can be found at [REMS](https://rems-ag-58c10e6f7952.her
 ### Wireframes
 
 - __Desktop__
+
 ![Wireframe Project](media/wireframe_project.JPG)
 ![Wireframe Property](media/wireframe_property.JPG)
 ![Wireframe Ticket](media/wireframe_ticket.JPG)
 
 - __Mobile__
+
 ![Wireframe Project](media/wireframe_project_mobile.JPG)
 ![Wireframe Property](media/wireframe_property_mobile.JPG)
 ![Wireframe Ticket](media/wireframe_ticket_mobile.JPG)
@@ -305,35 +307,60 @@ Remaining Bugs
 ### Program Validation Testing
 | Section Tested | Input To Validate | Expected Outcome | Actual Outcome | Pass/Fail |
 | -------------- | ----------------- | ---------------- | -------------- | --------- |
-| Start Program | N/A | Load welcome message and prompt user to enter name | As expected | PASS |
-| Enter Name | Input "Cami" | Display Menu Option | As expected | PASS |
-| Enter Name | Input "1" | Notify user that this isn't a valid input and loop back | As expected | PASS |
-| Enter Name | Input "A1" | Notify user that this isn't a valid input and loop back | As expected | PASS |
-| Enter Name | Input "Cami garcia" | Notify user that this isn't a valid input and loop back | As expected | PASS |
-| Enter Name | Press enter with no input | Notify user that this isn't a valid input and loop back | As expected | PASS |
-| Menu Option | Input "1" | Start game | As expected | PASS |
-| Menu Option | Input "2" | Display ranking and menu at the bottom | As expected | PASS |
-| Menu Option | Input "3" | Say goodbye to user and exit program | As expected | PASS |
-| Menu Option | Input "A" | Notify user that this isn't a valid input and loop back | As expected | PASS |
-| Menu Option | Input "A1" | Notify user that this isn't a valid input and loop back | As expected | PASS |
-| Menu Option | Input "0.1" | Notify user that this isn't a valid input and loop back | As expected | PASS |
-| Menu Option | Input "ajc123" | Notify user that this isn't a valid input and loop back | As expected | PASS |
-| Menu Option | Input "cami garcia" | Notify user that this isn't a valid input and loop back | As expected | PASS |
-| Menu Option | Input "0" | Notify user that this isn't a valid input and loop back | As expected | PASS |
-| Menu Option | Input "4" | Notify user that this isn't a valid input and loop back | As expected | PASS |
-| Menu Option | Press enter with no input | Notify user that this isn't a valid input and loop back | As expected | PASS |
-| Game row or column | Input "1" | Save value to calculate coordinate | As expected | PASS |
-| Game row or column | Input "2" | Save value to calculate coordinate | As expected | PASS |
-| Game row or column | Input "3" | Save value to calculate coordinate | As expected | PASS |
-| Game row or column | Input "4" | Save value to calculate coordinate | As expected | PASS |
-| Game row or column | Input "5" | Save value to calculate coordinate | As expected | PASS |
-| Game row or column | Input "0" | Notify user that this isn't a valid input and loop back | As expected | PASS |
-| Game row or column | Input "6" | Notify user that this isn't a valid input and loop back | As expected | PASS |
-| Game row or column | Input "A" | Notify user that this isn't a valid input and loop back | As expected | PASS |
-| Game row or column | Input "A1" | Notify user that this isn't a valid input and loop back | As expected | PASS |
-| Game row or column | Input "cami garcia" | Notify user that this isn't a valid input and loop back | As expected | PASS |
-| Game row or column | Press enter with no input | Notify user that this isn't a valid input and loop back | As expected | PASS |
-| Game row or column | input was same as previous coordinates | Notify user that has already given that coordinate and loop back | As expected | PASS |
+| All Pages |  |  |  |  |
+|  | Click on REMS | Redirects user to Main Page  | As expected | PASS |
+|  | Click on Projects | Redirects user to Projects Page  | As expected | PASS |
+|  | Click on Properties | Redirects user to Properties Page  | As expected | PASS |
+|  | Click on Tickets | Redirects user to Tickets Page  | As expected | PASS |
+|  | Click on Sign Out button | Redirects user to Sign Out page | As expected | PASS |
+| Main Page |  |  |  |  |
+|  | Click on Sign Up or Register | Redirects user to Sign Up Page  | As expected | PASS |
+|  | Click on Sign In | Redirects user to Sign In Page  | As expected | PASS |
+|  | Click on Projects | Redirects user to Projects Page  | As expected | PASS |
+|  | Click on Properties | Redirects user to Properties Page  | As expected | PASS |
+|  | Click on Tickets | Redirects user to Tickets Page  | As expected | PASS |
+| Sign Up |  |  |  |  |
+|  | Enter valid username | The field will only accept letters, numbers, and @/./+/-/_ characters  | As expected | PASS |
+|  | Enter valid password(twice) | The field will only accept passwords that have at least 8 characters | As expected | PASS |
+|  | Click Sign Up button | Redirects user to Main Page (signed in) | As expected | PASS |
+| Sign In |  |  |  |  |
+|  | Enter valid username | The field will only accept letters, numbers, and @/./+/-/_ characters | As expected | PASS |
+|  | Enter valid password | The field will only accept passwords that have at least 8 characters | As expected | PASS |
+|  | Click Sign In button | Redirects user to Main Page (signed in) | As expected | PASS |
+| Sign Out |  |  |  |  |
+|  | Click signout button | Redirects user to main page (signed out) | As expected | PASS |
+| Projects Page |  |  |  |  |
+|  | Click on add project | Redirects user to add project page | As expected | PASS |
+|  | Enter valid Project name | The field will not accept more than 50 characters | As expected | PASS |
+|  | Enter valid Address | The field will not accept more than 50 characters | As expected | PASS |
+|  | Click on edit project | Redirects user to edit project page | As expected | PASS |
+|  | Click on delete project | Removes project and reload page | As expected | PASS |
+| Properties Page |  |  |  |  |
+|  | Click on add property | Redirects user to add property page | As expected | PASS |
+|  | Enter valid Property number | The field will not accept more than 50 characters | As expected | PASS |
+|  | Enter valid price | The field will only accept numbers | As expected | PASS |
+|  | Enter valid status | The field will only accept the options inside the drop-down menu | As expected | PASS |
+|  | Enter valid project | The field will only accept the options inside the drop-down menu | As expected | PASS |
+|  | Click on edit property | Redirects user to edit property page | As expected | PASS |
+|  | Click on delete property | Removes property and reload page | As expected | PASS |
+| Tickets Page |  |  |  |  |
+|  | Click on add ticket | Redirects user to add ticket page | As expected | PASS |
+|  | Enter valid property | The field will only accept the options inside the drop-down menu | As expected | PASS |
+|  | Enter valid title | The field will not accept more than 200 characters | As expected | PASS |
+|  | Enter valid slug | The field will not accept more than 200 characters and the hypen symbol (-) instead of spaces | As expected | PASS |
+|  | Enter valid author | The field will oly accept the options inside the drop-down menu | As expected | PASS |
+|  | Enter Image | The field wont use any image different than the placeholder | As expected | PASS |
+|  | Enter Excerpt | The field will accept all kind of text also if it's empty | As expected | PASS |
+|  | Enter valid Content | The field will accept all kind of text but it can't be empty | As expected | PASS |
+|  | Enter valid author | The field will only accept the options inside the drop-down menu | As expected | PASS |
+|  | Click on edit ticket | Redirects user to edit ticket page | As expected | PASS |
+|  | Click on delete ticket | Removes ticket and reload page | As expected | PASS |
+|  | Click on ticket's title | Redirects user to ticket detail page | As expected | PASS |
+| Ticket Detail Page |  |  |  |  |
+|  | Enter valid body | The field will accept all kind of text but it can't be empty | As expected | PASS |
+|  | Click on submit | Displays the comment with author, date and time on the left and comment's number will increase | As expected | PASS |
+|  | Click on heart | The heart (empty) will change color to red and number will increase | As expected | PASS |
+|  | Click on read-heart | The heart (liked) will loss it's color and number will decrease | As expected | PASS |
 
 ### Cross-browser Testing
 I have tested it on Chrome, Firefox and Edge. The program has loaded correctly and had no issues running as expected across all browsers.
