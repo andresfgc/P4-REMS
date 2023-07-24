@@ -19,6 +19,29 @@ Within REMS the user can:
 The deployed application can be found at [REMS](https://rems-ag-58c10e6f7952.herokuapp.com/)
 ## UX & Design
 
+### Design
+
+- __Colour Scheme__
+  - The three main colours used are white, grey and light-blue.
+
+- __Typography__
+  - The Roboto font is used throughout the whole website with Lato as the fallbackfont.
+
+- __Imagery__
+  - The Building Placeholder image is integrated to emphasize the idea of using the application as a Real Estate Management System.
+
+### Wireframes
+
+- __Desktop__
+[Wireframe Project](media/wireframe_project.JPG)
+[Wireframe Property](media/wireframe_property.JPG)
+[Wireframe Ticket](media/wireframe_ticket.JPG)
+
+- __Mobile__
+[Wireframe Project](media/wireframe_project_mobile.JPG)
+[Wireframe Property](media/wireframe_property_mobile.JPG)
+[Wireframe Ticket](media/wireframe_ticket_mobile.JPG)
+
 ### User Stories
 
 User Stories are docummented inside the **REMS User Stories Project**
@@ -233,12 +256,13 @@ I have manually tested this project by doing the following:
 ### Bugs
 
 Solved Bugs
-* My "get_name_data" function was accepting all kind of values, I fixed it by adding "isalpha()" inside the if statement.
-* My "display_ranking" function was not letting me show the score Value next to the name because it was an integrer and my function was looking for strings to make the ranking tab. I fixed it by converting the top_ten variable again to str before the for loop.
-* my "game" function was allowing to write the same coordinate indefinitely to increase the score. I fixed it by adding a list that collects the given coordinates. With the help of this list I was able to use an if statement to check if both the row and the column had already been called before and if yes then re-ask for new coordinates without adding score.
+* When deleting a project, the properties corresponding to that project were not deleted. Whitin the property model, the variable project was added, which with this option **on_delete=models.CASCADE** deletes all the properties related to the project. The same method was used in the tickets once the corresponding property was deleted.
+* The view of the tables in projects and properties pages wasn't responsive enough on mobile devices. CCS was added to make it responsive for most mobiles devices, for the smallest screens you wont be able to see the edit and delete botton completely but it is possible to move the oveview to the left in order to see them fully.
 
 Remaining Bugs
-* the ranking does not update names and scores during the same interaction. In case the user makes it into the top 10, he/she must first end the interaction and then start a new one.
+* User can't save the ticket of the slug is not written correctly. Example, for House 22J user has to write "House-22J".
+* User can access to the projects, properties, tickets pages without using authentification, but only using the corresponding URLs. This will break the application in some cases like for example when adding a comment without euthentification.
+* Event if user uploads a new image, it is still not possible to change the image in the ticket.
 
 ### Validator Testing
 * PEP8
@@ -255,19 +279,11 @@ Remaining Bugs
 ### User Stories Testing
 | User Goal | Requirement met | Image(s) |
 | --------- | --------------- | -------- |
-| As a user, I want to be able to type my name and know if the information is valid. | Yes | ![User test 1a](media/welcome_name.JPG) ![User test 1b](media/menu.JPG) ![User test 1c](media/name_error_1c.JPG) ![User test 1d](media/name_error_1d.JPG) |
-| As a user, I want to be able to read the rules of the game. | Yes | ![User test 2a](media/rules_2a.JPG) |
-| As a user, I want to be able to know how many mines are in the minefield. | Yes | ![User test 3a](media/rules_3a.JPG) |
-| As a user, I want to be able to see the current ranking. | Yes | ![User test 4a](media/ranking.JPG) |
-| As a user, I want to be able to see the given coordinate represented in the minefield. | Yes | ![User test 5a](media/game.JPG) |
-| As a user, I want to be able to see the number of mines around the given position. | Yes | ![User test 6a](media/game.JPG) |
-| As a user, I want to be able to see what coordinates I have entered during the game. | Yes | ![User test 7a](media/game.JPG) |
-| As a user, I want to be able to see my score during and at the end of the game. | Yes | ![User test 8a](media/game.JPG) ![User test 8b](media/game_lose.JPG) ![User test 8c](media/game_win.JPG)  |
-| As a user, I want to be able to know if the coordinates I am entering are valid. | Yes | ![User test 9a](media/coordinate_9b.JPG) |
-| As a user, I want to be able to see mines when I lose. | Yes | ![User test 10a](media/game_lose.JPG) |
-| As a user, I want to be able to replay the game as many times as I want. | Yes | ![User test 11a](media/game_lose.JPG) ![User test 11b](media/game_win.JPG) |
-| As a user, I want to be able to exit the game. | Yes | ![User test 12a](media/quit_game_12a.JPG) |
-
+| As a Site User/Site Admin, I can use authentication so that my team can see who creates and comments tickets. | Yes | ![User test 1a](media/signup_page.jpg) ![User test 1b](media/signup_page_username_exists_pw_short.jpg) ![User test 1c](media/signup_page_same_pw.jpg) ![User test 1d](media/signin_page.jpg) ![User test 1e](media/main_page_signedin_notificaion.jpg) ![User test 1f](media/signin_page_error.jpg) |
+| As a Site User/Site Admin, I can manage properties so that the property´s information can be reviewed and updated in real time. | Yes | ![User test 2a](media/project_page_start.jpg) ![User test 2b](media/project_page_add.jpg) ![User test 2c](media/project_page_edit.jpg) ![User test 2d](media/project_page_table.jpg) |
+| As a Site User/Site Admin, I can manage properties so that the property´s information can be reviewed and updated in real time. | Yes | ![User test 3a](media/property_page_start.jpg) ![User test 3b](media/property_page_add.jpg) ![User test 3c](media/property_page_edit.jpg) ![User test 3d](media/property_page_table.jpg) |
+| As a Site User/Site Admin, I can manage tickets so that the ticket's information can be reviewed and updated in real time. | Yes | ![User test 4a](media/tickets_page_start.jpg) ![User test 4b](media/tickets_page_add_1of2.jpg) ![User test 4c](media/tickets_page_add_2of2.jpg) ![User test 4d](media/tickets_page_grid.jpg) |
+| As a Site User/Site Admin, I can comment a ticket so that the team can document all related activities for each property. | Yes | ![User test 5a](media/comment_like_start.jpg) ![User test 5b](media/comment_like_3of3.jpg) |
 
 ### Program Validation Testing
 | Section Tested | Input To Validate | Expected Outcome | Actual Outcome | Pass/Fail |
@@ -309,18 +325,18 @@ I have tested it on Chrome, Firefox and Edge. The program has loaded correctly a
 | ------- | ----- |
 | Chrome | ![Browser Chrome](media/chrome.JPG) |
 | Firefox | ![Browser Firefox](media/firefox.JPG) |
-| Edge | ![Browser Edge](media/Edge.JPG) |
+| Edge | ![Browser Edge](media/edge.JPG) |
 
 ## Deployment
 This project was deployed using Code Institute's mock terminal for Heroku.
 
-The deployed application can be found at [minefield](https://minefield.herokuapp.com/)
+The deployed application can be found at [REMS](https://rems-ag-58c10e6f7952.herokuapp.com/)
 
 * Steps for deployment:
   * Clone template repository
   * Create a new Heroku app
-  * Add in Config Vars `CREDS` with value and `PORT` with `8000` 
-  * Set buildbacks to `Python` and `NodeJS` in that order
+  * Add in Config Vars `CLOUDINARY_URL` with `API Environment variable`, `DATABASE_URL` with `ElephantSQL postgres URL`, `HEROKU_POSTGRESWL_PURPLE_URL` with `postgres URL`, `PORT` with `8000` and `SECRET_KEY` with value
+  * Set buildbacks to `Python`
   * Link the Heroku app to the repository in Github
   * Click on Deploy
 
@@ -331,4 +347,6 @@ The deployed application can be found at [minefield](https://minefield.herokuapp
 * Code to clear_screen function taken from [Rahul Janghu](https://www.scaler.com/topics/how-to-clear-screen-in-python/)
 
 ### Design
+* Wireframes were made using []
 * Flowchart was made using [Smartdraw](https://www.smartdraw.com/)
+* Building placeholder was taken from [Unsplash.com](https://unsplash.com/es/fotos/q7dmr-o4GiM)
