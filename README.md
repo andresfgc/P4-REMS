@@ -33,14 +33,14 @@ The deployed application can be found at [REMS](https://rems-ag-58c10e6f7952.her
 ### Wireframes
 
 - __Desktop__
-[Wireframe Project](media/wireframe_project.JPG)
-[Wireframe Property](media/wireframe_property.JPG)
-[Wireframe Ticket](media/wireframe_ticket.JPG)
+![Wireframe Project](media/wireframe_project.JPG)
+![Wireframe Property](media/wireframe_property.JPG)
+![Wireframe Ticket](media/wireframe_ticket.JPG)
 
 - __Mobile__
-[Wireframe Project](media/wireframe_project_mobile.JPG)
-[Wireframe Property](media/wireframe_property_mobile.JPG)
-[Wireframe Ticket](media/wireframe_ticket_mobile.JPG)
+![Wireframe Project](media/wireframe_project_mobile.JPG)
+![Wireframe Property](media/wireframe_property_mobile.JPG)
+![Wireframe Ticket](media/wireframe_ticket_mobile.JPG)
 
 ### User Stories
 
@@ -185,11 +185,17 @@ User Stories are docummented inside the **REMS User Stories Project**
   * I plan to create a filter-function where the user can see only the projects that are currently relevant at a given time.
 
 * Deadline:
-  * In plan to add the deadline by which the project is to be sold.
+  * I plan to add the deadline by which the project is to be sold.
+
+* Message for visual feedback:
+  * I plan to add a message function to give feedback to the user when somethin inside the project is not filled correctly. 
 
 #### For Properties page
 * Filter-function:
   * I plan to add a filter-function where the user can select only relevant project's properties and another filter-function for the properties's status.
+
+* Message for visual feedback:
+  * I plan to add a message function to give feedback to the user when somethin inside the property is not filled correctly. 
 
 #### For Tickets page
 * Remove already selected properties:
@@ -203,6 +209,9 @@ User Stories are docummented inside the **REMS User Stories Project**
 
 * Overview for draft-tickets:
   * I plan to add an overview inside the tickets page for tickets that are still drafts. Right now only admin users inside the admin interface can see, edit and delete them.
+
+* Message for visual feedback:
+  * I plan to add a message function to give feedback to the user when somethin inside the ticket is not filled correctly. 
 
 #### For Ticket Details page
 * CRUD for comments:
@@ -233,6 +242,8 @@ User Stories are docummented inside the **REMS User Stories Project**
     * It was used to add css style.
   * gunicorn
     * It is used to run Django on Heroku.
+  * JavaScript
+    * It is used to close the authentication alert message after 3 seconds.
   
   
 
@@ -265,16 +276,22 @@ Remaining Bugs
 * Event if user uploads a new image, it is still not possible to change the image in the ticket.
 
 ### Validator Testing
+
 * PEP8
   * No errors were returned from CI Python Linter
+![PEP8 linter](media/pep8_linter.jpg)
+
 * W3C Validator
   * No HTML errors were returned from W3C Validator
+![W3C Validator](media/W3C_validator.jpg)
+
 * Jigsaw Validator
   * No CSS errors were returned from Jigsaw Validator
+![Jigsaw Validator](media/Jigsaw_validator.jpg)
+
 * Jshint
-  * No JavaScript errors were returned from Jshint Validator
-  
-![PEP8 linter](media/pep8_linter.jpg)
+  * No JavaScript errors were returned from Jshint Validator 
+![Jshint](media/Jshint.jpg)
 
 ### User Stories Testing
 | User Goal | Requirement met | Image(s) |
@@ -343,10 +360,10 @@ The deployed application can be found at [REMS](https://rems-ag-58c10e6f7952.her
 ## Credits
 
 ### Code
-* Code to add mines and display board taken from [Painless Programming](https://www.youtube.com/watch?v=bGr-j89FaRM) and [here](https://www.youtube.com/watch?v=Wjzgm6p0TJY&t=1s)
-* Code to clear_screen function taken from [Rahul Janghu](https://www.scaler.com/topics/how-to-clear-screen-in-python/)
+* Code to add CRUD for projects and properties was taken from Code institute lesson [Database Management Systems > Walkthrough](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+DB101+2021_T1/courseware/c0c31790fcf540539fd2bd3678b12406/6e44128b0b37416ab40c1a87ef2cb32a/)
+* Code to add CRUD for tickets, authentication, comments and likes was taken from Code institute lesson [Full Stack Frameworks > I Think Therefore I Blog](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+FST101+2021_T1/courseware/b31493372e764469823578613d11036b/fe4299adcd6743328183aab4e7ec5d13/)
 
 ### Design
-* Wireframes were made using []
+* Wireframes were made using [Wireframe.cc](https://wireframe.cc/)
 * Flowchart was made using [Smartdraw](https://www.smartdraw.com/)
 * Building placeholder was taken from [Unsplash.com](https://unsplash.com/es/fotos/q7dmr-o4GiM)
