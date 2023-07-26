@@ -17,6 +17,11 @@ Within REMS the user can:
 5. document all relevant facts about the property.
 
 The deployed application can be found at [REMS](https://rems-ag-58c10e6f7952.herokuapp.com/)
+
+## Agile Methodology
+The project [REMS User Stories](https://github.com/users/andresfgc/projects/7) contains a clear documentation for the five user stories that were developed during the creation of this application. The Backlog has user stories that will solve some of the existing bugs as well as the features left to implement.
+![REMS User Stories](media/project_rems_user_stories.JPG)
+
 ## UX & Design
 
 ### Design
