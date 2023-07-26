@@ -23,4 +23,6 @@ class CommentForm(forms.ModelForm):
 class TicketForm(forms.ModelForm):
     class Meta:
         model = Ticket
-        fields = ['property', 'title', 'slug', 'author', 'featured_image', 'excerpt', 'content', 'status']
+        fields = [
+            'property', 'title', 'slug', 'author',
+            'featured_image', 'excerpt', 'content', 'status']
