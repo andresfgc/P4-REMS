@@ -402,5 +402,5 @@ The deployed application can be found at [REMS](https://rems-ag-58c10e6f7952.her
 
 ### Design
 * Wireframes were made using [Wireframe.cc](https://wireframe.cc/)
-* Flowchart was made using [Smartdraw](https://www.smartdraw.com/)
+* ERD and Flowchart were made using [Smartdraw](https://www.smartdraw.com/)
 * Building placeholder was taken from [Unsplash.com](https://unsplash.com/es/fotos/q7dmr-o4GiM)
