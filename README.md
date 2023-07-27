@@ -22,6 +22,10 @@ The deployed application can be found at [REMS](https://rems-ag-58c10e6f7952.her
 The project [REMS User Stories](https://github.com/users/andresfgc/projects/7) contains a clear documentation for the five user stories that were developed during the creation of this application. The Backlog has user stories that will solve some of the existing bugs as well as the features left to implement.
 ![REMS User Stories](media/project_rems_user_stories.JPG)
 
+## Database Diagram
+The entity relationship diagram shows the dependency of the classes on each other and their relationship between the primary and secondary keys.
+![Database Diagram](media/REMS_RED.jpeg)
+
 ## UX & Design
 
 ### Design
