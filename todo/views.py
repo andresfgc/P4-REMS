@@ -3,10 +3,9 @@ from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Project, Property, Ticket, Comment
 from .forms import PropertyForm, ProjectForm, CommentForm, TicketForm
-# Create your views here.
 
 
-# for properties.
+# structure taken from Database Management Systems > Walkthrough
 def get_properties(request):
     properties = Property.objects.all()
     context = {
@@ -48,7 +47,7 @@ def delete_property(request, property_id):
     return redirect('properties')
 
 
-# for projects.
+# structure taken from Database Management Systems > Walkthrough
 def get_projects(request):
     projects = Project.objects.all()
     context = {
@@ -90,7 +89,7 @@ def delete_project(request, project_id):
     return redirect('projects')
 
 
-# for Tickets.
+# structure taken from  FSF > I Think Therefore I Blog
 class TicketList(generic.ListView):
     model = Ticket
     queryset = Ticket.objects.filter(status=1).order_by('-created_on')
@@ -127,7 +126,7 @@ class TicketList(generic.ListView):
         ticket.delete()
         return redirect('tickets')
 
-
+# structure taken from  FSF > I Think Therefore I Blog
 class TicketDetail(View):
 
     def get(self, request, slug, *args, **kwargs):
@@ -181,7 +180,7 @@ class TicketDetail(View):
             },
         )
 
-
+# structure taken from  FSF > I Think Therefore I Blog
 class TicketLike(View):
 
     def post(self, request, slug):

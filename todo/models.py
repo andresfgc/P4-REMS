@@ -2,9 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
-# Create your models here.
-
-
+# Class structure taken from Database Management Systems > Walkthrough
 class Project(models.Model):
     project_name = models.CharField(max_length=50, null=False, blank=False)
     address = models.CharField(max_length=50, null=False, blank=False)
@@ -12,7 +10,7 @@ class Project(models.Model):
     def __str__(self):
         return self.project_name
 
-
+# Class structure taken from Database Management Systems > Walkthrough
 class Property(models.Model):
     property_status = models.TextChoices("property\
     _status", "Available Quoted Reserved Rejected Sold")
@@ -28,7 +26,7 @@ class Property(models.Model):
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
-
+# Class structure taken from  FSF > I Think Therefore I Blog
 class Ticket(models.Model):
     property = models.OneToOneField(
         Property, on_delete=models.CASCADE, primary_key=True)
@@ -55,7 +53,7 @@ class Ticket(models.Model):
     def number_of_likes(self):
         return self.likes.count()
 
-
+# Class structure taken from  FSF > I Think Therefore I Blog
 class Comment(models.Model):
     ticket = models.ForeignKey(
         Ticket, on_delete=models.CASCADE, related_name="comments")
