@@ -4,7 +4,7 @@
 
 REMS is inspired by the sections "Database Management Systems" with its project "Task Manager" and "Full Stack Frameworks" with its project "I think therefore I Blog", together with the personal interest in the area of real estate management, hence the name Real Estate Management System.
 
-REMS is a tool that allows the user to document and share the current status of the properties with his team during the sales period. 
+REMS is a tool that allows the user to document and share the current status of the properties with his/her team during the sales period. 
 
 In this project it was possible to put into practice fundamental topics such as database creation, agile methodology and CRUD.
 
@@ -14,7 +14,7 @@ Within REMS the user can:
 2. create, edit and delete projects at any time he/she wishes.
 3. create, edit and delete properties related to the existing project.
 4. create, edit, delete and like tickets containing additional information about the current status of the property.
-5. document all relevant facts about the property.
+5. document all relevant facts about the property with comments.
 
 The deployed application can be found at [REMS](https://rems-ag-58c10e6f7952.herokuapp.com/)
 
@@ -34,7 +34,7 @@ The entity relationship diagram shows the dependency of the classes on each othe
   - The three main colours used are white, grey and light-blue.
 
 - __Typography__
-  - The Roboto font is used throughout the whole website with Lato as the fallbackfont.
+  - the "Native font stack" from Bootstrap was used for the typography.
 
 - __Imagery__
   - The Building Placeholder image is integrated to emphasize the idea of using the application as a Real Estate Management System.
@@ -269,7 +269,7 @@ User Stories are docummented inside the **REMS User Stories Project**
 ## Testing
 
 I have manually tested this project by doing the following:
-* Passed the code through a [PEP8 linter](https://pep8ci.herokuapp.com/) and confirmed there are no problems.
+* Passed the code through a [PEP8 linter](https://pep8ci.herokuapp.com/) and confirmed there are no problems, except from line 128 in settings.py where the AUTH_PASSWORD_VALIDATORS is still longer than 79 characters (83 characters).
 * Tested in my local terminal and the Code Institute Heroku terminal.
 * HTML, no errors were returned when passing through the official [W3C Validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Frems-ag-58c10e6f7952.herokuapp.com%2F).
 * CSS, no errors were returned when passing through the official [Jigsaw Validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Frems-ag-58c10e6f7952.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=es).
@@ -282,9 +282,10 @@ Solved Bugs
 * The view of the tables in projects and properties pages wasn't responsive enough on mobile devices. CCS was added to make it responsive for most mobiles devices, for the smallest screens you wont be able to see the edit and delete botton completely but it is possible to move the oveview to the left in order to see them fully.
 
 Remaining Bugs
-* User can't save the ticket of the slug is not written correctly. Example, for House 22J user has to write "House-22J".
+* User can't save the ticket if the slug is not written correctly. Example, for House 22J user has to write "House-22J".
 * User can access to the projects, properties, tickets pages without using authentification, but only using the corresponding URLs. This will break the application in some cases like for example when adding a comment without euthentification.
 * Event if user uploads a new image, it is still not possible to change the image in the ticket.
+* In settings.py, line 128 is longer than 79 characters(4 characters longer). The original 127 was much longer, but it was splitted between line 127 & 128. Hovewer line 128 is still too long, after trying a new line before and after a point, trying a new line before and after "_" and trying a separation with "\", it was decided to add the issue inside a git commit and spcify it again in the README documentation.
 
 ### Validator Testing
 
