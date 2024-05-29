@@ -39,12 +39,12 @@
     </div>
     <div class="container-fluid second-bg row">
         <div class="col-md-8 mt-3 offset-md-2">
-            <p>Or Login as a Guest</p>
+            <p>Or sign in as a Guest</p>
             <form class="login" method="POST" action="{% url 'account_login' %}">
                 {% csrf_token %}
                 <input type="hidden" name="username" value="Guest">
                 <input type="hidden" name="password" value="YouGuessedIt123">
-                <button class="btn btn-signup right" type="submit">{% trans "Log In" %}</button>
+                <button class="btn btn-signup right" type="submit">{% trans "Sign In" %}</button>
                 <style>
                     input[type="hidden"] {
                         display: none;
