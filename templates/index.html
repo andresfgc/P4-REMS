@@ -39,11 +39,8 @@
     </div>
     <div class="container-fluid second-bg row">
         <div class="col-md-8 mt-3 offset-md-2">
-            <p>Or Login as a Guest</p>
-            <form class="login" method="POST" action="{% url 'account_login' %}">
-                {% csrf_token %}
-                <button class="btn btn-signup right" type="submit">{% trans "As Guest" %}</button>
-            </form>
+            <p>Or Sign In as Guest</p>
+            <a class="link btn btn-signup" href="/accounts/login/">As Guest</a>
         </div>
     </div>
     {% endif %}
