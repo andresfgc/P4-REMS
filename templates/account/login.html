@@ -27,7 +27,7 @@
                     <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                     {% endif %}
                     <button class="btn btn-signup right" type="submit">{% trans "Sign In" %}</button>
-                    <button class="btn btn-guest" type="button" onclick="guestLogin()">Log in as Guest</button>
+                    <button class="btn btn-guest" type="button" onclick="guestLogin()">As Guest</button>
                 </form>
             </div>
         </div>
@@ -35,8 +35,8 @@
 </div>
 <script>
     function guestLogin() {
-        document.querySelector('input[name="username"]').value = 'guest_username'; // replace with your guest username
-        document.querySelector('input[name="password"]').value = 'guest_password'; // replace with your guest password
+        document.querySelector('input[name="username"]').value = 'Guest'; // replace with your guest username
+        document.querySelector('input[name="password"]').value = 'YouGuessedIt123'; // replace with your guest password
         document.querySelector('form.login').submit();
     }
 </script>
