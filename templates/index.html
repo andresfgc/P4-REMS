@@ -42,17 +42,28 @@
             <p>Or sign in as a Guest</p>
             <form class="login" method="POST" action="{% url 'account_login' %}">
                 {% csrf_token %}
-                <input type="hidden" name="username" value="Guest">
-                <input type="hidden" name="password" value="YouGuessedIt123">
-                <button class="btn btn-signup right" type="submit">{% trans "Sign In" %}</button>
-                <style>
-                    input[type="hidden"] {
-                        display: none;
-                    }
+                {{ form.as_p }}
+                {% if redirect_field_value %}
+                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                {% endif %}
+                <button type="button" class="btn btn-guest" onclick="guestLogin()">As Guest</button>
                 </style>
             </form>
         </div>
     </div>
+    <script>
+        function guestLogin() {
+            const form = document.querySelector('.login');
+            const usernameField = form.querySelector('input[name="login"]');
+            const passwordField = form.querySelector('input[name="password"]');
+    
+            if (usernameField && passwordField) {
+                usernameField.value = "Guest";
+                passwordField.value = "YouGuessedIt123";
+                form.submit();
+            }
+        }
+    </script>
     {% endif %}
 </div>
 
