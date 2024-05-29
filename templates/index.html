@@ -39,7 +39,7 @@
     </div>
     <div class="container-fluid second-bg row">
         <div class="col-md-8 mt-3 offset-md-2">
-            <p>Or sign in as a Guest</p>
+            <p>Or Login as a Guest</p>
             <form class="login" method="POST" action="{% url 'account_login' %}">
                 {% csrf_token %}
                 {{ form.as_p }}
@@ -47,6 +47,10 @@
                 <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                 {% endif %}
                 <button type="button" class="btn btn-guest" onclick="guestLogin()">As Guest</button>
+                <style>
+                    input[type="hidden"] {
+                        display: none;
+                    }
                 </style>
             </form>
         </div>
@@ -58,8 +62,8 @@
             const passwordField = form.querySelector('input[name="password"]');
     
             if (usernameField && passwordField) {
-                usernameField.value = "Guest";
-                passwordField.value = "YouGuessedIt123";
+                usernameField.value = "guest";
+                passwordField.value = "Youguessedit123";
                 form.submit();
             }
         }
